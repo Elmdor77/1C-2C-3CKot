@@ -12,9 +12,13 @@ int main()
         ;
     std::cout << -9.6; // sta³a rzeczywista (.)
     std::cout << '\n';
-    std::cout << "ajajaja!\n";
-    std::cout << "w twoich oczach\t";   // tab-\t enter-\n
-    std::cout << "fornitooooooooooo\n";
+    std::cout << "ajajaja!\t";
+    std::cout << "w twoich oczach\n";   // tab-\t enter-\n
+    std::cout << "fornitooooooooooo\t" << 420 << "\tooooooooooootintrof\n";
+    std::cout << '\t\t*';
+    std::cout << '\t***';
+    std::cout << '***';
+    std::cout << '**';
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
