@@ -1,6 +1,6 @@
 
 #include <iostream>
-
+//*.program br¹cy i pokazuj¹cy podany numer
 void task1()
 {
 	std::cout << "Hello World!\n";
@@ -17,8 +17,7 @@ void task1()
 
 	std::cout << "you gave\t" << number_From_user << "\n";
 }
-
-//program obliczaj¹cy œredni¹ arytmetyczn¹ 2 liczb.
+//*.program obliczaj¹cy œredni¹ arytmetyczn¹ 2 liczb.
 void task2()
 {
 	std::cout << "Podaj pierwsza liczbe\n ";
@@ -32,19 +31,6 @@ void task2()
 	std::cout << "srednia wynosi ";
 	std::cout << srednia;
 }
-/*
-*. Program obliczaj¹cy objêtoœæ sto¿ka.4
-*. Program obliczaj¹cy pole ko³a.5
-*. Program obliczaj¹cy wartoœæ wyra¿enia a^2 + b^2 6
-*. Program obliczaj¹cy pole trójk¹ta o podstawie b i wysokoœci h 7
-*. Program obliczaj¹cy objêtoœæ kuli o promieniu r 8
-*. Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h 9
-*. Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3. 10
-*. Stwórz program, który pobiera od u¿ytkownika d³ugoœæ w metrach i przelicza j¹ na centymetry i milimetry, wyœwietlaj¹c wynik. 11
-*. Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany. 12
-*/
-
-
 //*.Program obliczaj¹cy pole prostok¹ta.
 void task3()
 {
@@ -121,7 +107,64 @@ void task8()
 //*.Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h
 void task9()
 {
-	int side_trapeze_1, side_trapeze_2, area;
+	int side_trapeze_1, side_trapeze_2, area_trapeze, height_trapeze;
+	std::cout << "Give first side of trapeze\t";
+	std::cin >> side_trapeze_1;
+	std::cout << "Give height of trapeze\t";
+	std::cin >> height_trapeze;
+	std::cout <<"Give second side of trapeze\t";
+	std::cin >> side_trapeze_2;
+	area_trapeze = ((side_trapeze_1 + side_trapeze_2) * height_trapeze) / 2;
+	std::cout << "Area of trapeze = ";
+	std::cout << area_trapeze;
+
+}
+//*.Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3.
+void task10()
+{
+	int first_number, second_number, third_number, first_scale, second_scale, third_scale, weighted_average;
+	std::cout << "Give first number\t";
+	std::cin >> first_number;
+	std::cout << "Give first scale\t";
+	std::cin >> first_scale;
+	std::cout << "Give second number\t";
+	std::cin >> second_number;
+	std::cout << "Give second scale\t";
+	std::cin >> second_scale;
+	std::cout << "Give third number\t";
+	std::cin >> third_number;
+	std::cout << "Give third scale\t";
+	std::cin >> third_scale;
+	weighted_average = (first_number * first_scale + second_number * second_scale + third_number * third_scale) / 3;
+	std::cout << "weighted average = ";
+	std::cout << weighted_average;
+}
+//*. Stwórz program, który pobiera od u¿ytkownika d³ugoœæ w metrach i przelicza j¹ na centymetry i milimetry, wyœwietlaj¹c wynik.
+void task11()
+{
+	int meters, centimeters, milimeters;
+	std::cout << "Give how many meters you want to recalculate\n";
+	std::cin >> meters;
+	centimeters = 100 * meters;
+	milimeters = 1000 * meters;
+	std::cout << "Recaltulated to centimeters = ";
+	std::cout << centimeters;
+	std::cout << "\n";
+	std::cout << "Recaltulated to milimeters = ";
+	std::cout << milimeters;
+	std::cout << "\n";
+}
+//*. Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany.
+void task12()
+{
+	double USD, CAD;
+	std::cout << "Give how many USD you want to recalculate into CAD\n";
+	std::cin >> USD;
+	CAD = USD * 1.36; 
+	std::cout << "You have ";
+	std::cout << CAD;
+	std::cout << "CAD";
+
 
 }
 
@@ -129,7 +172,8 @@ void task9()
 
 int main()
 {
-	setlocale(LC_CTYPE, "polish");
+	setlocale(LC_CTYPE, "polish"); // Dodaje polskie litery
+	
 	//task1();
 	//task2();
 	//task3();
@@ -138,9 +182,10 @@ int main()
 	//task6();
 	//task7();
 	//task8();
-	task9();
+	//task9();
 	//task10();
 	//task11();
+	//task12();
 
 }
 /*
@@ -191,4 +236,15 @@ Warunki programistów:
  - jeœli nazwa sk³ada siê z wielu znaków w miejscu spacji podreœlenie lub od 2 s³owa pocz¹tek z du¿ej
  - nazwa po angielsku
 
+*/
+/*
+*. Program obliczaj¹cy objêtoœæ sto¿ka.4
+*. Program obliczaj¹cy pole ko³a.5
+*. Program obliczaj¹cy wartoœæ wyra¿enia a^2 + b^2 6
+*. Program obliczaj¹cy pole trójk¹ta o podstawie b i wysokoœci h 7
+*. Program obliczaj¹cy objêtoœæ kuli o promieniu r 8
+*. Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h 9
+*. Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3. 10
+*. Stwórz program, który pobiera od u¿ytkownika d³ugoœæ w metrach i przelicza j¹ na centymetry i milimetry, wyœwietlaj¹c wynik. 11
+*. Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany. 12
 */
