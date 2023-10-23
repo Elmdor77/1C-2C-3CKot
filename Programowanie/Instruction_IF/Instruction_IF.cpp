@@ -34,10 +34,6 @@ T	T	T		T		T	 F
 */
 
 /*
-*. Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny. Wyœwietl odpowiedni komunikat.
-*. Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
-*. Napisz program, który poprosi u¿ytkownika o podanie masy cia³a (w kilogramach) i wzrostu (w metrach).
-Na podstawie tych danych oblicz wskaŸnik BMI (Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
 *. Napisz program, który poprosi u¿ytkownika o podanie d³ugoœci trzech odcinków i sprawdzi, czy mo¿na zbudowaæ z nich trójk¹t. Wyœwietl odpowiedni komunikat.
 *. Napisz program, który poprosi u¿ytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeœli jest to mo¿liwe. Wyœwietl wynik lub odpowiedni komunikat, jeœli liczba jest ujemna.
 *. Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
@@ -207,8 +203,81 @@ void task9()
 	std::cout << "Give a second number:\n";
 	std::cin >> number_second;
 	if (number_first > number_second)
-		std::cout << "first number is bigger"
+		std::cout << "First number is bigger\n";
+	if (number_first < number_second)
+		std::cout << "Second number is bigger\n";
+	if (number_first == number_second)
+		std::cout << "The numbers are equall\n";
 }
+//Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny.Wyœwietl odpowiedni komunikat.
+void task10()
+{
+	int number_year;
+	std::cout << "Give a year:\n";
+	std::cin >> number_year;
+	if (number_year % 4 == 0 && number_year % 100 != 0 || number_year % 400 == 0)
+		std::cout << "This year is a leap year";
+	else
+		std::cout << "This year is not a leap year";
+}
+//Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
+void task11()
+{
+	int number_devided_by_3_5;
+	std::cout << "Give a number:\n";
+	std::cin >> number_devided_by_3_5;
+	if (number_devided_by_3_5 % 3 == 0 && number_devided_by_3_5 % 5 == 0)
+		std::cout << "This number is devided by 3 and 5";
+	else
+		std::cout << "This number is not devided by 3 and 5";
+}
+/*. Napisz program, który poprosi u¿ytkownika o podanie masy cia³a(w kilogramach) i wzrostu(w metrach).
+Na  podstawie tych danych oblicz wskaŸnik BMI(Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
+poni¿ej 16 - wyg³odzenie
+16 - 16.99 - wychudzenie
+17 - 18.49 - niedowagê
+18.5 - 24.99 - wagê prawid³ow¹
+25.0 - 29.9 - nadwagê
+30.0 - 34.99 - I stopieñ oty³oœci
+35.0 - 39.99 - II stopieñ oty³oœci
+powy¿ej 40.0 - oty³oœæ skrajn¹
+Wzór :
+BMI = masa / wysokoœæ ^ 2
+*/
+void task12()
+{
+	float number_weight, number_height, bmi;
+	std::cout << "Give your weight (kg):\n";
+	std::cin >> number_weight;
+	std::cout << "Give your height (m):\n";
+	std::cin >> number_height;
+	bmi = number_weight / (number_height * number_height);
+	if (bmi < 16)
+		std::cout << "You have a starvation";
+	if (bmi >= 16 && bmi < 17)
+		std::cout << "You have a emaciation";
+	if (bmi >= 17 && bmi < 18.5)
+		std::cout << "You have a underweight";
+	if (bmi >= 18.5 && bmi < 25)
+		std::cout << "You have a correct weight";
+	if (bmi >= 16)
+		std::cout << "You have a overweight";
+	if (bmi >= 16)
+		std::cout << "You have a I degree of obesity";
+	if (bmi >= 16)
+		std::cout << "You have a II degree of obesity";
+	if (bmi >= 16)
+		std::cout << "You have a extreme obesity";
+}
+
+
+
+
+
+
+
+
+
 
 
 int main()
@@ -221,8 +290,10 @@ int main()
 	//task6();
 	//task7();
 	//task8();
-	task9();
-
+	//task9();
+	//task10();
+	//task11();
+	task12();
 }
 
 
