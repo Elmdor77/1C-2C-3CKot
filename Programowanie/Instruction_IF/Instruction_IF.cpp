@@ -1,5 +1,6 @@
 #include <iostream>
 /*
+DRY - don't repeat yourself
 Operatory warunkowe:
 > - wiêksze
 < - miejsze
@@ -172,25 +173,50 @@ void task8()
 	int number_day;
 	std::cout << "Give a number of day in a week:\n";
 	std::cin >> number_day;
-	if (number_day < 7 && number_day < 1)
-	{
+	
 		if (number_day == 1)
-			std::cout << "It is monday";
+			std::cout << "It is monday\n";
 		if (number_day == 2)
-			std::cout << "It is tuesday";
+			std::cout << "It is tuesday\n";
 		if (number_day == 3)
-			std::cout << "It is wednesday";
+			std::cout << "It is wednesday\n";
 		if (number_day == 4)
-			std::cout << "It is thursday";
+			std::cout << "It is thursday\n";
 		if (number_day == 5)
-			std::cout << "It is friday";
+			std::cout << "It is friday\n";
 		if (number_day == 6)
-			std::cout << "It is saturday";
-		if (number_day == 7)
-			std::cout << "It is sunday";
+			std::cout << "It is saturday\n";
+		if (number_day == 7 || number_day == 0)
+			std::cout << "It is sunday\n";
+		if (number_day > 7 || number_day < 0)
+		std::cout << "There are only 7 days in a week you fucking idiot\n";
+	switch (number_day)
+	{
+	case 1:
+		std::cout << "Monday\n";
+		break;
+	case 2:
+		std::cout << "Tuesday\n";
+		break;
+	case 3:
+		std::cout << "Wednesday\n";
+		break;
+	case 4:
+		std::cout << "Thursday\n";
+		break;
+	case 5:
+		std::cout << "Friday\n";
+		break;
+	case 6:
+		std::cout << "Saturday\n";
+		break;
+	case 0:
+	case 7:
+		std::cout << "Sunday\n";
+		break;
+	default:
+		std::cout << "There are only 7 days in a week you fucking idiot\n";
 	}
-	else
-		std::cout << "There are only 7 days in a week you fucking idiot";
 }
 //Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i wyœwietli wiêksz¹ z nich.
 void task9()
@@ -400,7 +426,7 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	//task8();
+	task8();
 	//task9();
 	//task10();
 	//task11();
@@ -408,7 +434,7 @@ int main()
 	//task13();
 	//task14();
 	//task15();
-	task16();
+	//task16();
 }
 
 
