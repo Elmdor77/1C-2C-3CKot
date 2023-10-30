@@ -407,16 +407,14 @@ void task16()
 
 
 }
+//Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹
+void task17()
+{
+	int number_not_negative;
+	std::cout << "Give a number:\n";
+	std::cin >> number_not_negative; 
 
-
-
-
-//if ((number_month <= 12 && number_month >= 1) && (number_day >= 1 && number_day <= 31))&&!(number_month == 2 && (number_year % 4 == 0 && number_year % 100 != 0 || number_year % 400 == 0) && number_day > 29 || number_month == 2 && !number_year % 4 == 0 && number_year % 100 != 0 || number_year % 400 == 0) && number_day > 28)&&!(number_month == 4 || number_month == 6 || number_month == 9 || number_month == 11) && number_day > 30)
-
-
-
-
-
+}
 int main()
 {
 	//task1();
@@ -426,7 +424,7 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	task8();
+	//task8();
 	//task9();
 	//task10();
 	//task11();
@@ -435,6 +433,7 @@ int main()
 	//task14();
 	//task15();
 	//task16();
+	task17();
 }
 
 
