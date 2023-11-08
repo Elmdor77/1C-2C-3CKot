@@ -84,7 +84,10 @@ void task4()
 	do
 {
 		current_number = current_number + 1;
-		std::cout << current_number << " ,\t ";
+		/*current_number += 1;
+		++current_number;
+		current_number++;*/
+		std::cout << current_number << ", ";
 	} while (upper_range > current_number);
 }
 
