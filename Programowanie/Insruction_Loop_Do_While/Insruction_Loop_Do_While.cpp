@@ -1,9 +1,10 @@
 #include <iostream>
 /*Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹.
 Zabezpiecz program przed pobieraniem liczb ujemnych.*/
+
 void task1()
 {
-	int numberFromUser; 
+	/*int numberFromUser;
 	std::cout << "Give a positive number:\n";
 	std::cin >> numberFromUser;
 	if (numberFromUser < 0)
@@ -22,16 +23,14 @@ void task1()
 				{
 					std::cout << "Give a positive number:\n";
 					std::cin >> numberFromUser;
-					//wklejamy ca³ego If'a
+					/wklejamy ca³ego If'a
 				}
 			}
 		}
 	}
+	std::cout << "Liczba dodatnia pobrana od uzytkownika " << numberFromUser << "\n"; */
 
-	std::cout << "Liczba dodatnia pobrana od uzytkownika " << numberFromUser << "\n";
-}
-void task2()
-{
+
 	int numberFromUser;
 	do
 	{
@@ -41,7 +40,7 @@ void task2()
 	std::cout << "Well done!\n";
 }
 //Napisz program ,tóry wylosuje losow¹ liczbe, a nastêpnie urzytkownik ma j¹ zgadn¹æ
-void task3()
+void task2()
 {
 	const int LOWER_RANGE = 7;
 	const int UPPER_RANGE = 15;
@@ -75,7 +74,7 @@ void task3()
 	std::cout << "Well done\n";
 }
 //Napiszprogram wypisuj¹cy liczby w zbiorze <1, x>
-void task4()
+void task3()
 {
 	long long upper_range;
 	std::cout << "Give a number greater then 1\n";
@@ -91,11 +90,12 @@ void task4()
 	} while (upper_range > current_number);
 }
 
+
 int main()
 {
     //task1();
 	//task2();
-	//task3();
-	task4();
+	task3();
+	//task4();
 }
 
