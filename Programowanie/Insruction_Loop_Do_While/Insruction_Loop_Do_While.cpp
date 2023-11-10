@@ -1,6 +1,6 @@
 #include <iostream>
-/*Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹.
-Zabezpiecz program przed pobieraniem liczb ujemnych.*/
+//Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹.
+//Zabezpiecz program przed pobieraniem liczb ujemnych.
 
 void task1()
 {
@@ -96,6 +96,4 @@ int main()
     //task1();
 	//task2();
 	task3();
-	//task4();
 }
-
