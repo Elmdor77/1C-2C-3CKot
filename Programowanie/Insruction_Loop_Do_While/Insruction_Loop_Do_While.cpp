@@ -81,7 +81,7 @@ void task3()
 	std::cin >> upper_range;
 	long long current_number = 0;
 	do
-{
+	{
 		current_number = current_number + 1;
 		/*current_number += 1;
 		++current_number;
@@ -90,12 +90,78 @@ void task3()
 	} while (upper_range > current_number);
 }
 
-
-int main()
+//Napisz program, który policzy sumê cyfr podanej przez u¿ytkownika liczby.
+void task4()
 {
-    //task1();
-	//task2();
-	task3();
-	//task4();
+	int number;
+	std::cout << "Podaj liczbê\n";
+	std::cin >> number;
+
+	int sum = 0;
+	int rest;
+
+	/*
+	rest = number % 10;
+	sum = sum + rest;
+	number = number / 10;
+	if (number != 0)
+	{
+		rest = number % 10;
+		sum = sum + rest;
+		number = number / 10;
+		if (number != 0)
+		{
+			rest = number % 10;
+			sum = sum + rest;
+			number = number / 10;
+			if (number != 0)
+			{
+				rest = number % 10;
+				sum = sum + rest;
+				number = number / 10;
+				//if (number != 0) ...
+			}
+		}
+	}
+	*/
+
+	do
+	{
+		rest = number % 10;
+		sum = sum + rest;
+		number = number / 10;
+	} while (number != 0);
+
+	std::cout << "Suma " << sum << "\n";
 }
+	//Popeoœ u¿ytkownika o podawanie liczb a¿ wprowadzi 0. Oblicz sumê oraz sredni¹ arytmetyczb¹ liczb.
+void task5()
+{
+
+	int number_not_zero;
+	int sum = 0;
+	int number_of_numbers = 0;
+	do {
+
+		std::cout << "Give a number";
+		std::cin >> number_not_zero;
+		sum = sum + number_not_zero;
+		number_of_numbers++;
+	} while (number_not_zero != 0);
+
+	std::cout << "Suma = " << sum << "\n";
+	double avg = sum / number_of_numbers;
+	std::cout << "Œrednia = " << avg << "\n";
+}
+
+
+
+	int main()
+	{
+		//task1();
+		//task2();
+		//task3();
+		//task4();
+		task5();
+	}
 
