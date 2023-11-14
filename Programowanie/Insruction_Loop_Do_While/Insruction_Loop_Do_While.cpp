@@ -1,6 +1,6 @@
 #include <iostream>
-/*Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹.
-Zabezpiecz program przed pobieraniem liczb ujemnych.*/
+//Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹.
+//Zabezpiecz program przed pobieraniem liczb ujemnych.
 
 void task1()
 {
@@ -125,43 +125,11 @@ void task4()
 	}
 	*/
 
-	do
-	{
-		rest = number % 10;
-		sum = sum + rest;
-		number = number / 10;
-	} while (number != 0);
-
-	std::cout << "Suma " << sum << "\n";
-}
-	//Popeoœ u¿ytkownika o podawanie liczb a¿ wprowadzi 0. Oblicz sumê oraz sredni¹ arytmetyczb¹ liczb.
-void task5()
+int main()
 {
-
-	int number_not_zero;
-	int sum = 0;
-	int number_of_numbers = 0;
-	do {
-
-		std::cout << "Give a number";
-		std::cin >> number_not_zero;
-		sum = sum + number_not_zero;
-		number_of_numbers++;
-	} while (number_not_zero != 0);
-
-	std::cout << "Suma = " << sum << "\n";
-	double avg = sum / number_of_numbers;
-	std::cout << "Œrednia = " << avg << "\n";
+    //task1();
+	//task2();
+	task3();
+	//task4();
 }
-
-
-
-	int main()
-	{
-		//task1();
-		//task2();
-		//task3();
-		//task4();
-		task5();
-	}
 
