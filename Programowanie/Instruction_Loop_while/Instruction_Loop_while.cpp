@@ -26,12 +26,24 @@ void task2()
 	std::cin >> first_number;
 	std::cout << "Give second number";
 	std::cin >> second_number;
-	if (first_number > second_number)
-		NWD = second_number;
-	else
-		NWD = first_number;
-	while (first_number % NWD != 0 && second_number % NWD != 0)
-		NWD--;
+
+	NWD = (first_number > second_number) ? second_number : first_number;
+	if (first_number == 0 || second_number == 0)
+	{
+		if (first_number == 0)
+			NWD = second_number;
+		else if (second_number == 0)
+			NWD = first_number;
+	}
+	else 
+	{
+		while (first_number % NWD != 0 || second_number % NWD != 0)
+			NWD--;
+	}
+
+	
+
+	
 	std::cout << "Greatest common divider = " << NWD;
 }
 int main()
