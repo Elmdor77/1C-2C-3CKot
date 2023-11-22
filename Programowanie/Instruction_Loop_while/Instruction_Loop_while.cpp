@@ -22,9 +22,9 @@ void task1()
 void task2()
 {
 	int first_number, second_number, NWD;
-	std::cout << "Give first number";
+	std::cout << "Give first number\n";
 	std::cin >> first_number;
-	std::cout << "Give second number";
+	std::cout << "Give second number\n";
 	std::cin >> second_number;
 
 	NWD = (first_number > second_number) ? second_number : first_number;
@@ -40,10 +40,6 @@ void task2()
 		while (first_number % NWD != 0 || second_number % NWD != 0)
 			NWD--;
 	}
-
-	
-
-	
 	std::cout << "Greatest common divider = " << NWD;
 }
 int main()
