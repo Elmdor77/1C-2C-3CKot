@@ -19,6 +19,7 @@ void task1()
 	std::cout << "Sum =  " << sum << "\n";
 }
 //Napisz program, ktry obliczy NWD, GCD(greatest common divider) dwóch liczb
+//NWD1
 void task2()
 {
 	int first_number, second_number, NWD;
@@ -42,6 +43,7 @@ void task2()
 	}
 	std::cout << "Greatest common divider = " << NWD <<"\n";
 }
+//NWD2
 void task3()
 {
 	int first_number, second_number, NWD, devinded;
@@ -74,9 +76,14 @@ void task3()
 	}
 	std::cout << "Greatest common divider = " << NWD << "\n";
 }
+//NWD3
 void task4()
 {
 	int first_number, second_number, NWD;
+	std::cout << "Give first number\n";
+	std::cin >> first_number;
+	std::cout << "Give second number\n";
+	std::cin >> second_number;
 	while (second_number != 0)
 	{
 		int tmp_first_number = first_number;
@@ -85,10 +92,46 @@ void task4()
 	
 
 	}
+	NWD = first_number;
+	std::cout << "NWD = " << NWD;
+}
+//Sprawdzanie czy liczba jest palindromem.
+void task5()
+{
+	int number;
+	std::cout << "Give a number\n";
+	std::cin >> number;
+	//obliczam iloœæ cyfr
+	int tmpNumber = number;
+	int numberOfDigit = 1;
+	while (tmpNumber >= 10)
+	{
+		numberOfDigit++;
+		tmpNumber = tmpNumber / 10;
+	}
+	//liczê 10 do potêgi numberOfDigit - 1
+	int leftDivided = 1;
+	while (numberOfDigit != 1)
+	{
+		leftDivided *= 10;
+		numberOfDigit--;
+	}
+
+	int rightDivided = 10;
+	int leftNumber = number;
+	int rightNumber = number;
+
+	while (leftNumber > 10)
+	{
+
+	}
+		
 }
 int main()
 {
 	//task1();
 	//task2();
-	task3();
+	//task3();
+	//task4();
+	task5();
 }
