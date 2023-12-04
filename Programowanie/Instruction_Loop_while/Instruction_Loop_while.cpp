@@ -19,6 +19,7 @@ void task1()
 	std::cout << "Sum =  " << sum << "\n";
 }
 //Napisz program, ktry obliczy NWD, GCD(greatest common divider) dwóch liczb
+
 //NWD1
 void task2()
 {
@@ -101,22 +102,22 @@ void task5()
 	int number;
 	std::cout << "Give a number\n";
 	std::cin >> number;
-	//obliczam iloœæ cyfr
+	
+	if (number < 0)
+		number = number * -1;
 	int tmpNumber = number;
 	int numberOfDigit = 1;
-	while (tmpNumber >= 10)
+	while (tmpNumber >= 10) //obliczam iloœæ cyfr
 	{
 		numberOfDigit++;
 		tmpNumber = tmpNumber / 10;
 	}
-	//liczê 10 do potêgi numberOfDigit - 1
 	int leftDivided = 1;
-	while (numberOfDigit != 1)
+	while (numberOfDigit != 1) //liczê 10 do potêgi numberOfDigit - 1
 	{
 		leftDivided *= 10;
 		numberOfDigit--;
 	}
-
 	int rightDivided = 10;
 	int leftNumber = number;
 	int rightNumber = number;
@@ -131,17 +132,16 @@ void task5()
 			isPalindrome = false;
 			break;
 		}
-
 		leftNumber = leftNumber % leftDivided;
 		rightNumber = rightNumber / rightDivided;
 
 		leftDivided = leftDivided / 10;
 	}
-	if (isPalindrome /*== true*/)
-		std::cout << "Liczba jest palindromem\n";
+	if (isPalindrome )
+		std::cout << "Liczba jest palindromem\n"; //true
 	else
-		std::cout << "Liczba nie jest palindromem\n";
-}
+		std::cout << "Liczba nie jest palindromem\n"; //false
+} 
 int main()
 {
 	//task1();
