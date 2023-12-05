@@ -85,10 +85,42 @@ void task2()
 * Rozkład liczby na czynniki pierwsze
 */
 
+//Program obliczający sumę liczb od 1 do 100
+void task3()
+{
+	int sum = 0;
+	for (int number_1_to_100 = 1; number_1_to_100 <= 100; number_1_to_100++)
+	{
+		std::cout << number_1_to_100 << "\n";
+		sum = sum + number_1_to_100;
+	}
+	std::cout << "\nSum = " << sum << "\n";
+}
+//Program sprawdzający czy podana liczba jest liczbą doskonałą(czyli taką, której suma dzielników(z wyłączeniem samej siebie) jest równa danej liczbie, np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
+void task4()
+{
+	int number = 0;
+	int deviders = 0;
+	std::cout << "Give a number\n";
+	std::cin >> number;
+	int number_devider = number;
+	while (number_devider > 1)
+	{
+		number_devider--;
+		if (number % number_devider == 0)
+			deviders = deviders + number_devider;
+	}
+	std::cout << deviders;
+	if (deviders == number)
+		std::cout << "\nNumber is perfect";
+	else
+		std::cout << "\nNumber isn't perfect";
 
-
+}
 int main()
 {
 	//task1();
-	task2();
+	//task2();
+	//task3();
+	task4();
 }
