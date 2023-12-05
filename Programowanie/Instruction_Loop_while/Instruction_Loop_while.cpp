@@ -142,11 +142,30 @@ void task5()
 	else
 		std::cout << "Liczba nie jest palindromem\n"; //false
 } 
+void task6()
+{
+	int number_repeat;
+	std::cout << "Give how many times you want hello world to be written\n";
+	std::cin >> number_repeat;
+	/*while (number_repeat > 0)
+	{
+		std::cout << "Hello your computer is broken\n";
+		number_repeat--;
+	}*/
+	int i = 0;
+	while (i != number_repeat)
+	{
+		std::cout << "Hello your computer is broken\n";
+		i++;
+	}
+}
+
 int main()
 {
 	//task1();
 	//task2();
 	//task3();
 	//task4();
-	task5();
+	//task5();
+	task6();
 }
