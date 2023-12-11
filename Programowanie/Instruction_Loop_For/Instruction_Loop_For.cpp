@@ -112,15 +112,49 @@ void task4()
 	}
 	std::cout << deviders;
 	if (deviders == number)
-		std::cout << "\nNumber is perfect";
+		std::cout << "\nNumber is perfect\n";
 	else
-		std::cout << "\nNumber isn't perfect";
+		std::cout << "\nNumber isn't perfect\n";
 
 }
+//Program wyświetlający na ekranie kwadraty liczb od 1 do 100 (np. 1, 4, 9, 16 itd.)
+void task5()
+{
+	for (int i = 1; i < 101; i++)
+		std::cout << i << "*" << i << "=" << i * i << "\n";
+}
+//Program obliczający n!.Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4! itd.)
+void task6()
+{
+	int number;
+	std::cout << "Give a number\n";
+	std::cin >> number;
+	long long factorial = 1;
+	for (int i = 1; i <= number; i++)
+	{
+		factorial = factorial * i;
+		std::cout << i << "!=" << factorial << "\n";
+	}
+}
+void task7() 
+{
+	for (int x = 1; x < 11; x++)
+	{
+		for (int y = 1; y < 11; y++)
+		{
+			std::cout << x << "x" << y << "=" << x * y << "\t";
+		}
+		std::cout << "\n";
+	}
+}	
 int main()
 {
 	//task1();
 	//task2();
 	//task3();
-	task4();
+	//task4();
+	//task5();
+	//task6();
+	task7();
+
 }
