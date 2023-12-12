@@ -176,6 +176,69 @@ void task10()
 		std::cout << f << "\t";
 	}
 }
+/*Program, kóry wyświetli poniższe cztery wzory :
+****	54321        121212        122333
+***		65432        212121        223334444
+**		76543        121212        333444455555
+*		87654        212121        444455555666666*/
+void task11()
+{
+	const int NUMBER_OF_LINES = 4;
+	for (int lineNumber = 0; lineNumber < NUMBER_OF_LINES; lineNumber++)
+	{
+		for (int i = 0; i < NUMBER_OF_LINES - lineNumber; i++)
+			std::cout << "*";
+
+		std::cout << "\n";
+	}
+	for (int lineNumber = 0; lineNumber < NUMBER_OF_LINES; lineNumber++)
+	{
+		for (int i = 5; i > 0; i--)
+			std::cout << i + lineNumber;
+
+		std::cout << "\n";
+	}
+	for (int lineNumber = 0; lineNumber < NUMBER_OF_LINES; lineNumber++)
+	{
+		for (int i = 0; i < NUMBER_OF_LINES - lineNumber; i++)
+			std::cout << "*";
+
+		std::cout << "\n";
+	}
+	//2 row
+	for (int line_number = 0; line_number < NUMBER_OF_LINES; line_number++)
+	{
+		if (line_number % 2 == 0)
+			std::cout << "121212";
+		else
+			std::cout << "212121";
+		std::cout << "\n";
+	}
+	for (int line_number = 0; line_number < NUMBER_OF_LINES; line_number++)
+	{
+		for (int i = 0; i < NUMBER_OF_LINES - line_number; i++)
+			std::cout << "*";
+		std::cout << "\n";
+	}
+	int i = 1;
+	int x = 0;
+	int y = 3;
+	for (int line_number = 0; line_number < NUMBER_OF_LINES; line_number++)
+	{
+		for (; y < 4; y++)
+		{
+			for (;i < 4; i++)
+			{
+				for (x = 0; x < i; x++)
+					std::cout << i;
+			}
+			std::cout << "\n";
+		}
+		std::cout << "\n";
+	}
+
+}
+
 int main()
 {
 	//task1();
@@ -187,6 +250,7 @@ int main()
 	//task7();
 	//task8();
 	//task9();
-	task10();
+	//task10();
+	task11();
 
 }
