@@ -64,14 +64,6 @@ void task2()
 	//}
 }
 /*
-* Program obliczający sumę liczb od 1 do 100
-* Program sprawdzający czy podana liczba jest liczbą doskonałą (czyli taką, której suma dzielników (z wyłączeniem samej siebie) jest równa danej liczbie, np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
-* Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
-* Program obliczający n!.
-* Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4! itd.)
-* Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1=1, 1x2=2, 1x3=3 itd.).
-* Program wyświetlający na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
-* Program obliczający sumę kwadratów liczb od 1 do 10
 * Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
 
 * Program, kóry wyświetli poniższe cztery zwory:
@@ -136,6 +128,7 @@ void task6()
 		std::cout << i << "!=" << factorial << "\n";
 	}
 }
+//Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
 void task7() 
 {
 	for (int x = 1; x < 11; x++)
@@ -146,7 +139,43 @@ void task7()
 		}
 		std::cout << "\n";
 	}
-}	
+}
+//Program wyświetlający na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
+void task8()
+{
+	for (int i = 1; i < 101; i++)
+	{
+		if (i % 3 == 0)
+			std::cout << "Number devided by 3: " << i << "\n";
+
+	}
+}
+///Program obliczający sumę kwadratów liczb od 1 do 10
+void task9()
+{
+	int sum = 0;
+	for (int i = 1; i < 11; i++)
+	{
+		std::cout << i << "*" << i << "=" << i * i<<"\n";
+		sum = i * i + sum;
+	}
+	std::cout << "Sum =" << sum;
+}
+//Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich
+void task10()
+{
+	unsigned long long F1 = 0;
+	unsigned long long F2 = 1;
+	unsigned long long f = 0;
+	std::cout << F1 << "\t" << F2 << "\t";
+	for (int i = 2; i < 40; i++)
+	{
+		f = F1 + F2;
+		F2 = f;
+		F1 = F2;
+		std::cout << f << "\t";
+	}
+}
 int main()
 {
 	//task1();
@@ -155,6 +184,9 @@ int main()
 	//task4();
 	//task5();
 	//task6();
-	task7();
+	//task7();
+	//task8();
+	//task9();
+	task10();
 
 }
