@@ -33,7 +33,7 @@ void task4()
 	std::cout << "Give a password\n";
 	std::cin >> password;
 	if (password == "Kawazaki_Cago_Krico_Estriper")
-		std::cout << "Welcome my nigga\n";
+		std::cout << "Welcome to los penguinos ala vadagaska \n";
 	else
 		std::cout << "GTFO\n";
 }
@@ -54,8 +54,6 @@ void task5()
 	}
 }
 /*
-* Napisz program, który bêdzie prosi³ o has³o. Nie przepuœci dalej dopóki nie zostanie ono podane prawid³owo.
-* Napisz program, który pobiera od u¿ytkownika ci¹g znaków i wyœwietla liczbê samog³osek i spó³g³osek w tym ci¹gu.
 * Poproœ u¿ytkownika o wprowadzenie liczby ca³kowitej w systemie dziesiêtnym. Nastêpnie skonwertuj tê liczbê na system dwójkowy (binarny) i wyœwietl wynik.
 * Program sprawdzaj¹cy czy podany ci¹g znaków jest palindromem (czyli takim, który czytany od ty³u jest taki sam, jak czytany od przodu, np. "kajak")
 * Program sprawdzaj¹cy czy podane dwa s³owa s¹ anagramami (czyli takimi, które zawieraj¹ te same litery, ale w innym uk³adzie, np. "klasa" i "salka")
@@ -77,9 +75,42 @@ void task6()
 		std::cout << "Give a password\n";
 		std::cin >> password;
 	} while (password != "Wintonoverweight");
-	std::cout << "Gratulacje u¿ytkowniku wygra³eœ iphone 0.5 noob";
+	std::cout << "Gratulacje u¿ytkowniku wygra³eœ iphone 15 pro max";
+}
+//Napisz program, który pobiera od u¿ytkownika ci¹g znaków i wyœwietla liczbê samog³osek i spó³g³osek w tym ci¹gu.
+void task7()
+{
+	std::string characters_from_user;
+	int number_of_vovels = 0;
+	int number_of_consonant = 0;
+	std::cout << "Give a string of characters\n";
+	std::cin >> characters_from_user;
+	for (int i = 0; i < characters_from_user.length(); i++)
+	{
+		if (characters_from_user[i] >= 'a' && characters_from_user[i] <= 'z')
+			if (characters_from_user[i] == 'a' ||
+				characters_from_user[i] == 'e' ||
+				characters_from_user[i] == 'i' ||
+				characters_from_user[i] == 'o' ||
+				characters_from_user[i] == 'u' ||
+				characters_from_user[i] == 'y')
+			{
+				std::cout << i + 1 << " number is a vovel\n";
+				number_of_vovels++;
+			}
 
-	
+
+			else
+			{
+				std::cout << i + 1 << " number is a consonant\n";
+				number_of_consonant++;
+			}
+		else
+			std::cout << i + 1 << "number is neither vovel or consonant\n";
+	}
+
+	std::cout << "Number of vovels = " << number_of_vovels<<"\n";
+	std::cout << "Number of consonant = " << number_of_consonant<<"\n";
 }
 int main()
 {
@@ -88,6 +119,6 @@ int main()
 	//task3();
 	//task4();
 	//task5();
-	task6();
-	
+	//task6();
+	task7();
 }
