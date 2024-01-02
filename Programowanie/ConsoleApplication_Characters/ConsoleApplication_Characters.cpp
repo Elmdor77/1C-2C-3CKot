@@ -112,6 +112,22 @@ void task7()
 	std::cout << "Number of vovels = " << number_of_vovels<<"\n";
 	std::cout << "Number of consonant = " << number_of_consonant<<"\n";
 }
+//Poproœ u¿ytkownika o wprowadzenie liczby ca³kowitej w systemie dziesiêtnym.Nastêpnie skonwertuj tê liczbê na system dwójkowy(binarny) i wyœwietl wynik.
+void task8()
+{
+	int number_decimal;
+	std::cout << "Give a decimal number\n";
+	std::cin >> number_decimal;
+	int number_binary = 0;
+	int x = 1;
+	for (int i = 524288; i > 0 ; i = i / 2)
+	{
+		if (number_decimal % i == 0)
+			number_binary = number_binary + x;
+		x = x * 100;
+	}
+	std::cout << number_binary;
+}
 int main()
 {
 	//task1();
@@ -120,5 +136,6 @@ int main()
 	//task4();
 	//task5();
 	//task6();
-	task7();
+	//task7();
+	task8();
 }
