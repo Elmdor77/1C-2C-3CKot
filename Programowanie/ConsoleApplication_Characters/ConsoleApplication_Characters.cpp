@@ -178,16 +178,35 @@ void task10()
 	std::cin >> text_from_user;
 	bool is_anagram = false; 
 	int x;
-	for (int i = 0; i < characters_from_user.length(); i++)
+	int anagram_false = 0;
+	if (text_from_user.length() == characters_from_user.length())
 	{
-		for (x = text_from_user.length() - 1; x >= 0; x--)
+		for (int i = 0; i < characters_from_user.length(); i++)
 		{
-			if (characters_from_user[i] == text_from_user[x])
-				is_anagram = true;
+			for (x = text_from_user.length() - 1; x >= 0; x--)
+			{
+				if (characters_from_user[i] == text_from_user[x])
+				{
+					is_anagram = true;
+					break;
+				}
+			}
+			if (characters_from_user[i] != text_from_user[x])
+			{
+				anagram_false ++;
+				break;
+			}
 		}
-	}
+		if (anagram_false >= 1)
+			is_anagram = false;
+		if (is_anagram)
+			std::cout << "Texts are anagrams\n";
+		else
+			std::cout << "Texts aren't anagrams\n";
 
-	std::cout << text_from_user[-1];
+	}
+	else
+		std::cout << "Texts aren't anagrams\n";
 }
 
 int main()
