@@ -54,10 +54,8 @@ void task5()
 	}
 }
 /*
-* Program sprawdzaj¹cy czy podane dwa s³owa s¹ anagramami (czyli takimi, które zawieraj¹ te same litery, ale w innym uk³adzie, np. "klasa" i "salka")
 * Program wyci¹gaj¹cy informacje z numeru PESEL
 * Program implementuj¹cy algorytm szyfrowania Cezara (proste szyfrowanie, w którym ka¿dy znak w tekœcie jest zastêpowany innym znakiem, przesuniêtym o sta³¹ liczbê pozycji w alfabecie).
-
 * Program który na wejœciu przyjmie równanie a na wyjœciu da równanie w odwrotnej notacji polskiej ONP. Np. na wejœciu 2+3*4 na wyjœcu da 234*+
 * Program, który na wejœciu przyjmie rówanie w ONP a na wyjœciu wyœwietli wynik rówania.
 * Algorytm szyfrowania AtBash Cipher - algorytm szyfruj¹cy, w którym ka¿da litera jest zamieniana na literê z przeciwnej strony alfabetu (np. A na Z, B na Y itd.)
@@ -178,7 +176,7 @@ void task10()
 	std::cin >> text_from_user;
 	bool is_anagram = false; 
 	int x;
-	int anagram_false = 0;
+	int anagram_true = 0;
 	if (text_from_user.length() == characters_from_user.length())
 	{
 		for (int i = 0; i < characters_from_user.length(); i++)
@@ -187,18 +185,15 @@ void task10()
 			{
 				if (characters_from_user[i] == text_from_user[x])
 				{
-					is_anagram = true;
+					anagram_true++;
 					break;
 				}
+				
 			}
-			if (characters_from_user[i] != text_from_user[x])
-			{
-				anagram_false ++;
-				break;
-			}
+			
 		}
-		if (anagram_false >= 1)
-			is_anagram = false;
+		if (anagram_true == text_from_user.length())
+			is_anagram = true;
 		if (is_anagram)
 			std::cout << "Texts are anagrams\n";
 		else
@@ -218,7 +213,7 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	//task8();
+	task8();
 	//task9();
-	task10();
+	//task10();
 }
