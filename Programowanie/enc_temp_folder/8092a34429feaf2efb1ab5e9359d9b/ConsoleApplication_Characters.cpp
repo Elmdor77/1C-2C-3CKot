@@ -176,12 +176,15 @@ void task10()
 	std::cin >> characters_from_user;
 	std::cout << "Give a string of characters\n";
 	std::cin >> text_from_user;
-	bool is_anagram = false; 
-	int x;
+	bool is_anagram = true;
 	for (int i = 0; i < characters_from_user.length(); i++)
 	{
-		for (x = text_from_user.length() - 1; x >= 0; x--)
+		for (int x = text_from_user.length() - 1; x >= 0; x--)
 		{
+
+
+			if (characters_from_user[i] != text_from_user[x])
+				continue;
 			if (characters_from_user[i] == text_from_user[x])
 				is_anagram = true;
 		}
