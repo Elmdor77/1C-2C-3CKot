@@ -218,27 +218,22 @@ void task11()
 	int PESEL_month = 0;
 	int PESEL_day;
 	int PESEL_gender = 0;
-	if (PESEL_from_user.length() == 10)
+	PESEL_year = PESEL_year + PESEL_from_user[0] + PESEL_from_user[1];
+	PESEL_month = PESEL_month + PESEL_from_user[2] + PESEL_from_user[3];
+	if (PESEL_from_user[2] + PESEL_from_user[3] >= 21)
 	{
-		PESEL_year = PESEL_year + PESEL_from_user[0] + PESEL_from_user[1];
-		PESEL_month = PESEL_month + PESEL_from_user[2] + PESEL_from_user[3];
-		if (PESEL_from_user[2] + PESEL_from_user[3] >= 21)
-		{
-			PESEL_month = PESEL_month - 20;
-			PESEL_year = PESEL_year + 100;
-		}
-		PESEL_day = PESEL_from_user[4] + PESEL_from_user[5];
-		PESEL_gender = PESEL_from_user[9];
-		std::cout << "\nDay\t" << PESEL_day;
-		std::cout << "\nMonth\t" << PESEL_month;
-		std::cout << "\nYear\t" << PESEL_year;
-		if (PESEL_gender % 2 == 1)
-			std::cout << "\nGender\tMen";
-		else
-			std::cout << "\nGender\tWomen";
+		PESEL_month = PESEL_month - 20;
+		PESEL_year = PESEL_year + 100;
 	}
+	PESEL_day = PESEL_from_user[4] + PESEL_from_user[5];
+	PESEL_gender = PESEL_from_user[9];
+	std::cout << "\nDay\t" << PESEL_day;
+	std::cout << "\nMonth\t" << PESEL_month;
+	std::cout << "\nYear\t" << PESEL_year;
+	if (PESEL_gender % 2 == 1)
+		std::cout << "\nGender\tMen";
 	else
-		std::cout << "Give a real PESEL";
+		std::cout << "\nGender\tWomen";
 }
 int main()
 {
