@@ -203,7 +203,39 @@ void task10()
 	else
 		std::cout << "Texts aren't anagrams\n";
 }
-
+//Program wyci¹gaj¹cy informacje z numeru PESEL
+/*PESEL ma 11 liczb
+Dwie pierwsze cyfry okreœlaj¹ rok urodzenia
+*Kolejne dwie miesi¹c urodzenia (1-12 w XXw. ; 21-32 w XXIw.)
+*Kolejne dwa dzieñ urodzenia
+*P³eæ okreœla przedostatnia cyfra numeru PESEL cyfry 0, 2, 4, 6, 8 oznaczaj¹ p³eæ ¿eñsk¹ cyfry 1, 3, 5, 7, 9 oznaczaj¹ p³eæ mêsk¹
+*/
+void task11()
+{
+	std::string PESEL_from_user;
+	std::cout << "\nGive a PESEL";
+	int PESEL_year = 1900;
+	int PESEL_month = 0;
+	int PESEL_day;
+	int PESEL_gender = 0;
+	int n = PESEL_from_user.length();
+	PESEL_year = PESEL_year + PESEL_from_user[0] + PESEL_from_user[1];
+	PESEL_month = PESEL_month + PESEL_from_user[2] + PESEL_from_user[3];
+	if (PESEL_from_user[2] + PESEL_from_user[3] >= 21)
+	{
+		PESEL_month = PESEL_month - 20;
+		PESEL_year = PESEL_year + 100;
+	}
+	PESEL_day = PESEL_from_user[4] + PESEL_from_user[5];
+	PESEL_gender = PESEL_from_user[n-1];
+	std::cout << "\nDay\t" << PESEL_day;
+	std::cout << "\nMonth\t" << PESEL_month;
+	std::cout << "\nYear\t" << PESEL_year;
+	if (PESEL_gender % 2 == 1)
+		std::cout << "\nGender\tMen";
+	else
+		std::cout << "\nGender\tWomen";
+}
 int main()
 {
 	//task1();
