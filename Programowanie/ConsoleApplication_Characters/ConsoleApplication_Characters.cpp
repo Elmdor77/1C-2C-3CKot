@@ -203,7 +203,11 @@ void task10()
 	else
 		std::cout << "Texts aren't anagrams\n";
 }
+//Program wyci¹gaj¹cy informacje z numeru PESEL
+void task11()
+{
 
+}
 int main()
 {
 	//task1();
@@ -213,7 +217,8 @@ int main()
 	//task5();
 	//task6();
 	//task7();
-	task8();
+	//task8();
 	//task9();
 	//task10();
+	task11();
 }
