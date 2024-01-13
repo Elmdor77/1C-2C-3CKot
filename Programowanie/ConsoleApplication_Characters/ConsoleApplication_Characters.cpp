@@ -49,7 +49,7 @@ void task5()
 	std::cout << "Number of characters " << text_from_user.length() << "\n";
 	for (int i = 0; i < text_from_user.length(); i++)
 	{
-		if (text_from_user[1] == 'a')
+		if (text_from_user[i] == 'a')
 			number_of_characters++;
 	}
 }
@@ -214,20 +214,21 @@ void task11()
 {
 	std::string PESEL_from_user;
 	std::cout << "\nGive a PESEL";
+	std::cin >> PESEL_from_user;
 	int PESEL_year = 1900;
 	int PESEL_month = 0;
-	int PESEL_day;
+	int PESEL_day = 0;
 	int PESEL_gender = 0;
-	if (PESEL_from_user.length() == 10)
+	if (PESEL_from_user.length() == 11)
 	{
-		PESEL_year = PESEL_year + PESEL_from_user[0] + PESEL_from_user[1];
-		PESEL_month = PESEL_month + PESEL_from_user[2] + PESEL_from_user[3];
-		if (PESEL_from_user[2] + PESEL_from_user[3] >= 21)
+		PESEL_year = PESEL_year + PESEL_from_user[0] * 10 + PESEL_from_user[1];
+		PESEL_month = PESEL_month + PESEL_from_user[2] * 10 + PESEL_from_user[3];
+		if (PESEL_from_user[2] * 10 + PESEL_from_user[3] >= 21)
 		{
 			PESEL_month = PESEL_month - 20;
 			PESEL_year = PESEL_year + 100;
 		}
-		PESEL_day = PESEL_from_user[4] + PESEL_from_user[5];
+		PESEL_day = PESEL_from_user[4] * 10 + PESEL_from_user[5];
 		PESEL_gender = PESEL_from_user[9];
 		std::cout << "\nDay\t" << PESEL_day;
 		std::cout << "\nMonth\t" << PESEL_month;
@@ -246,11 +247,11 @@ int main()
 	//task2();
 	//task3();
 	//task4();
-	//task5();
+	task5();
 	//task6();
 	//task7();
 	//task8();
 	//task9();
 	//task10();
-	task11();
+	//task11();
 }
