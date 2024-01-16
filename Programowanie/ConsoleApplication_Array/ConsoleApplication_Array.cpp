@@ -52,10 +52,54 @@ void task2()
 //Napisz program, który uzupe³ni tablicê liczbami losowymi a nastêpnie znajdzie minimum oraz maksimum.
 void task3()
 {
+    const unsigned short LOWER_RANGE = 5;
+    const unsigned short UPPER_RANGE = 7;
 
+    const unsigned short ARRAY_SIZE = 3;
+    int numbers[ARRAY_SIZE];
+
+    srand(time(0));
+
+    std::cout << "wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        std::cout << numbers[i] << ", ";
+    }
+    std::cout << "\n";
+    int max = numbers[0];
+    for (int i = 1; i < ARRAY_SIZE; i++)
+    {
+        if (numbers[1] > max)
+            max = numbers[i];
+    }
+    std::cout << "Max = " << max << "\n";
+    int min = numbers[0];
+    for (int i = 1; i < ARRAY_SIZE; i++)
+    {
+        if (numbers[1] < max)
+            max = numbers[i];
+    }
+    std::cout << "Min = " << max << "\n";
 }
+void task4()
+{
+    const long long UPPER_RANGE = 70;
+    for (long long number_to_check = 2; number_to_check <= UPPER_RANGE; number_to_check++)
+    {
+        bool is_prime = true;
+        for (long long i = 2; i <= number_to_check / 2; i++)
+        {
+            if (number_to_check % i == 0)
+            {
+                is_prime = false;
+            }
+
+        }
+    }
+    
 int main()
 {
-	task1();
+	task3();
 }
 		
