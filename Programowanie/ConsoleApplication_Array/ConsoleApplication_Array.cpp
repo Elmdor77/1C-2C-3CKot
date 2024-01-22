@@ -85,6 +85,7 @@ void task3()
 void task4()
 {
     const long long UPPER_RANGE = 70;
+
     for (long long number_to_check = 2; number_to_check <= UPPER_RANGE; number_to_check++)
     {
         bool is_prime = true;
@@ -93,13 +94,52 @@ void task4()
             if (number_to_check % i == 0)
             {
                 is_prime = false;
+                break;
             }
 
         }
+        if (is_prime)
+            std::cout << number_to_check << ", ";
     }
-    
+    std::cout << "Done\n";
+
+    //wersja 2
+    bool sieveOfEratosthenes[UPPER_RANGE + 1];
+
+    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+    {
+        sieveOfEratosthenes[i] = true;
+    }
+
+    for (unsigned long long number = 2; number <= UPPER_RANGE; number++)
+    {
+        if (sieveOfEratosthenes[number])
+        {
+            for (long long numberToCrossOut = number + number; numberToCrossOut <= UPPER_RANGE; numberToCrossOut = numberToCrossOut + number)
+                sieveOfEratosthenes[numberToCrossOut] = false;
+        }
+    }
+
+    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+    {
+        if (sieveOfEratosthenes[i])
+            std::cout << i << ", ";
+    }
+    std::cout << "\n";
+}
+void task5()
+{
+    int number_of_week = 5;
+    std::cout << "Give a number of a week\n";
+    std::cin >> number_of_week;
+    std::string day_names[] = { "Monday", "Tuesday,", "Wednesday ", "Thursday ", "Friday ", "Saturday ", "Sunday " };
+    if (number_of_week >= 0 && number_of_week <= 6)
+        std::cout << "The day is:   " << day_names[number_of_week - 1] << "\n";
+    else
+        std::cout << "Give a good number\n";
+}
 int main()
 {
-	task3();
+	task5();
 }
 		
