@@ -133,13 +133,49 @@ void task5()
     std::cout << "Give a number of a week\n";
     std::cin >> number_of_week;
     std::string day_names[] = { "Monday", "Tuesday,", "Wednesday ", "Thursday ", "Friday ", "Saturday ", "Sunday " };
-    if (number_of_week >= 0 && number_of_week <= 6)
-        std::cout << "The day is:   " << day_names[number_of_week - 1] << "\n";
+    if (number_of_week >= 1 && number_of_week <= 7)
+        std::cout << "The day is:   " << day_names[number_of_week -  
+        1 ] << "\n";
     else
         std::cout << "Give a good number\n";
 }
+void task6()
+{
+    const unsigned short LOWER_RANGE = 5;
+    const unsigned short UPPER_RANGE = 7;
+    const unsigned short ARRAY_SIZE = 3;
+    int numbers[ARRAY_SIZE];
+
+    srand(time(0));
+
+    std::cout << "wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        std::cout << numbers[i] << ", ";
+    }
+    std::cout << "\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        int min_index = i;
+        for (int j = i + 1; j < ARRAY_SIZE; j++)
+        {
+            if (numbers[j] < numbers[min_index])
+                min_index = j;
+        }
+        int tmp = numbers[min_index];
+        numbers[min_index] = numbers[i];
+        numbers[i] = tmp;
+    }
+    std::cout << "Sorted numbers:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        std::cout << numbers[i] << ", ";
+    }
+    std::cout << "\n";
+}
 int main()
 {
-	task5();
+	task6();
 }
 		
