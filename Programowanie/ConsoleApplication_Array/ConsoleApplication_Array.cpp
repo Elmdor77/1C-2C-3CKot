@@ -22,160 +22,233 @@ void task1()
 //Napisz program obliczaj¹cy œredni¹ arytmetyczn¹ elementów w tablicy liczb ca³kowitych.
 void task2()
 {
-    // <LOWER_RANGE; UPPER_RANGE> przy za³o¿eniu, ¿e LOWER_RANGE <= UPPER_RANGE
-    const unsigned short LOWER_RANGE = 5;
-    const unsigned short UPPER_RANGE = 7;
+	// <LOWER_RANGE; UPPER_RANGE> przy za³o¿eniu, ¿e LOWER_RANGE <= UPPER_RANGE
+	const unsigned short LOWER_RANGE = 5;
+	const unsigned short UPPER_RANGE = 7;
 
-    const unsigned short ARRAY_SIZE = 3;
-    int numbers[ARRAY_SIZE];
+	const unsigned short ARRAY_SIZE = 3;
+	int numbers[ARRAY_SIZE];
 
-    srand(time(0));
+	srand(time(0));
 
-    std::cout << "wylosowane liczby:\n";
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n";
+	std::cout << "wylosowane liczby:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
 
-    int sum = 0;
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        sum = sum + numbers[i];
-    }
+	int sum = 0;
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		sum = sum + numbers[i];
+	}
 
-    double avg = sum * 1.0 / ARRAY_SIZE;
-    std::cout << "Œrednia wynosi: " << avg << "\n";
+	double avg = sum * 1.0 / ARRAY_SIZE;
+	std::cout << "Œrednia wynosi: " << avg << "\n";
 }
 
 //Napisz program, który uzupe³ni tablicê liczbami losowymi a nastêpnie znajdzie minimum oraz maksimum.
 void task3()
 {
-    const unsigned short LOWER_RANGE = 5;
-    const unsigned short UPPER_RANGE = 7;
+	const unsigned short LOWER_RANGE = 5;
+	const unsigned short UPPER_RANGE = 7;
 
-    const unsigned short ARRAY_SIZE = 3;
-    int numbers[ARRAY_SIZE];
+	const unsigned short ARRAY_SIZE = 3;
+	int numbers[ARRAY_SIZE];
 
-    srand(time(0));
+	srand(time(0));
 
-    std::cout << "wylosowane liczby:\n";
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n";
-    int max = numbers[0];
-    for (int i = 1; i < ARRAY_SIZE; i++)
-    {
-        if (numbers[1] > max)
-            max = numbers[i];
-    }
-    std::cout << "Max = " << max << "\n";
-    int min = numbers[0];
-    for (int i = 1; i < ARRAY_SIZE; i++)
-    {
-        if (numbers[1] < max)
-            max = numbers[i];
-    }
-    std::cout << "Min = " << max << "\n";
+	std::cout << "wylosowane liczby:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+	int max = numbers[0];
+	for (int i = 1; i < ARRAY_SIZE; i++)
+	{
+		if (numbers[1] > max)
+			max = numbers[i];
+	}
+	std::cout << "Max = " << max << "\n";
+	int min = numbers[0];
+	for (int i = 1; i < ARRAY_SIZE; i++)
+	{
+		if (numbers[1] < max)
+			max = numbers[i];
+	}
+	std::cout << "Min = " << max << "\n";
 }
 void task4()
 {
-    const long long UPPER_RANGE = 70;
+	const long long UPPER_RANGE = 70;
 
-    for (long long number_to_check = 2; number_to_check <= UPPER_RANGE; number_to_check++)
-    {
-        bool is_prime = true;
-        for (long long i = 2; i <= number_to_check / 2; i++)
-        {
-            if (number_to_check % i == 0)
-            {
-                is_prime = false;
-                break;
-            }
+	for (long long number_to_check = 2; number_to_check <= UPPER_RANGE; number_to_check++)
+	{
+		bool is_prime = true;
+		for (long long i = 2; i <= number_to_check / 2; i++)
+		{
+			if (number_to_check % i == 0)
+			{
+				is_prime = false;
+				break;
+			}
 
-        }
-        if (is_prime)
-            std::cout << number_to_check << ", ";
-    }
-    std::cout << "Done\n";
+		}
+		if (is_prime)
+			std::cout << number_to_check << ", ";
+	}
+	std::cout << "Done\n";
 
-    //wersja 2
-    bool sieveOfEratosthenes[UPPER_RANGE + 1];
+	//wersja 2
+	bool sieveOfEratosthenes[UPPER_RANGE + 1];
 
-    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
-    {
-        sieveOfEratosthenes[i] = true;
-    }
+	for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+	{
+		sieveOfEratosthenes[i] = true;
+	}
 
-    for (unsigned long long number = 2; number <= UPPER_RANGE; number++)
-    {
-        if (sieveOfEratosthenes[number])
-        {
-            for (long long numberToCrossOut = number + number; numberToCrossOut <= UPPER_RANGE; numberToCrossOut = numberToCrossOut + number)
-                sieveOfEratosthenes[numberToCrossOut] = false;
-        }
-    }
+	for (unsigned long long number = 2; number <= UPPER_RANGE; number++)
+	{
+		if (sieveOfEratosthenes[number])
+		{
+			for (long long numberToCrossOut = number + number; numberToCrossOut <= UPPER_RANGE; numberToCrossOut = numberToCrossOut + number)
+				sieveOfEratosthenes[numberToCrossOut] = false;
+		}
+	}
 
-    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
-    {
-        if (sieveOfEratosthenes[i])
-            std::cout << i << ", ";
-    }
-    std::cout << "\n";
+	for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+	{
+		if (sieveOfEratosthenes[i])
+			std::cout << i << ", ";
+	}
+	std::cout << "\n";
 }
 void task5()
 {
-    int number_of_week = 5;
-    std::cout << "Give a number of a week\n";
-    std::cin >> number_of_week;
-    std::string day_names[] = { "Monday", "Tuesday,", "Wednesday ", "Thursday ", "Friday ", "Saturday ", "Sunday " };
-    if (number_of_week >= 1 && number_of_week <= 7)
-        std::cout << "The day is:   " << day_names[number_of_week -  
-        1 ] << "\n";
-    else
-        std::cout << "Give a good number\n";
+	int number_of_week = 5;
+	std::cout << "Give a number of a week\n";
+	std::cin >> number_of_week;
+	std::string day_names[] = { "Monday", "Tuesday,", "Wednesday ", "Thursday ", "Friday ", "Saturday ", "Sunday " };
+	if (number_of_week >= 1 && number_of_week <= 7)
+		std::cout << "The day is:   " << day_names[number_of_week -
+		1] << "\n";
+	else
+		std::cout << "Give a good number\n";
 }
+//srotowanie przez wybieranie
 void task6()
 {
-    const unsigned short LOWER_RANGE = 5;
-    const unsigned short UPPER_RANGE = 7;
-    const unsigned short ARRAY_SIZE = 3;
-    int numbers[ARRAY_SIZE];
+	const unsigned short LOWER_RANGE = 1;
+	const unsigned short UPPER_RANGE = 100;
+	const unsigned short ARRAY_SIZE = 10;
+	int numbers[ARRAY_SIZE];
 
-    srand(time(0));
+	srand(time(0));
 
-    std::cout << "wylosowane liczby:\n";
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n";
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        int min_index = i;
-        for (int j = i + 1; j < ARRAY_SIZE; j++)
-        {
-            if (numbers[j] < numbers[min_index])
-                min_index = j;
-        }
-        int tmp = numbers[min_index];
-        numbers[min_index] = numbers[i];
-        numbers[i] = tmp;
-    }
-    std::cout << "Sorted numbers:\n";
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n";
+	std::cout << "Random nmbers:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		int min_index = i;
+		for (int j = i + 1; j < ARRAY_SIZE; j++)
+		{
+			if (numbers[j] < numbers[min_index])
+				min_index = j;
+		}
+		int tmp = numbers[min_index];
+		numbers[min_index] = numbers[i];
+		numbers[i] = tmp;
+	}
+	std::cout << "Sorted numbers:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
 }
+//sortowanie przez wstawianie
+void task7()
+{
+	const unsigned short LOWER_RANGE = 1;
+	const unsigned short UPPER_RANGE = 100;
+	const unsigned short ARRAY_SIZE = 10;
+	int numbers[ARRAY_SIZE];
+
+	srand(time(0));
+
+	std::cout << "Random numbers:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+	for (int i = 1; i < ARRAY_SIZE; i++)
+	{
+		int side = numbers[i];
+		int j;
+		for (j = i - 1; j >= 0 && numbers[j] > side; j--)
+		{
+			numbers[j + 1] = numbers[j];
+		}
+		numbers[j + 1] = side;
+	}
+	std::cout << "Sorted numbers:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+}
+//sortowanie b¹belkowe
+void task8()
+{
+	const unsigned short LOWER_RANGE = 1;
+	const unsigned short UPPER_RANGE = 100;
+	const unsigned short ARRAY_SIZE = 10;
+	int numbers[ARRAY_SIZE];
+
+	srand(time(0));
+
+	std::cout << "Random numbers:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+	for (int j = 0; j < ARRAY_SIZE; j++)
+	{
+
+		for (int i = 0; i < ARRAY_SIZE - 1; i++)
+		{
+			if (numbers[i] > numbers[i + 1])
+			{
+				int tmp = numbers[i];
+				numbers[i] = numbers[i + 1];
+				numbers[i + 1] = tmp;
+			}
+		}
+	}
+	std::cout << "Sorted numbers:\n";
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+}
+
 int main()
 {
-	task6();
+	task8();
 }
-		
