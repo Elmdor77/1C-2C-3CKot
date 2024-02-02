@@ -47,6 +47,12 @@ void task6_get_number(int& number)
     std::cout << "give a number\n";
     std::cin >> number;
 }
+int sum_of_numbers(int fn, int sn)
+{
+    int s;
+    s = fn + sn;
+    return s;
+}
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -57,15 +63,21 @@ int main()
     task2(text);
     task3("ale", 2);
     task3("sui", 2575);*/
-    int number = 9;
+    //int number = 9;
     /*std::cout << "Zmienna main" << number<<"\n";
     task4(number);
     std::cout << "Zmienna main" << number << "\n";
     std::cout << "Zmienna main " << number << "\n";
     task5(number);
     std::cout << "Zmienna main " << number << "\n";*/
-    int number_from_user = 5;
+    /*int number_from_user = 5;
     task6_get_number(number_from_user);
-    std::cout << "You gave " << number_from_user;
+    std::cout << "You gave " << number_from_user;*/
+    int first_number, second_number, sum;
+    first_number = 9;
+    second_number = 2;
+    sum = sum_of_numbers(first_number, second_number);
+    std::cout << sum;
+
 }
 
