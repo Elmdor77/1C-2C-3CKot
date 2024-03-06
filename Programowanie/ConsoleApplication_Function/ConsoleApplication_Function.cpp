@@ -12,7 +12,7 @@
 //Funkcja 
 void task1()
 {
-    std::cout << "Hello world!\n";
+    std::cout << "Hello worldfddvdvdv!\n";
 }
 //Funkcja uniwersalna 
 void task2(std::string text_param)
@@ -42,17 +42,42 @@ void task5(int &number)
     std::cout << "Zmienna task5 " << number << "\n";
 }
 //funkvja pobieraj¹ca liczbe
-void task6_get_number(int& number)
+void task6_get_number(int& number)//void nie wypuszcza ¿adnej wartoœci
 {
     std::cout << "give a number\n";
     std::cin >> number;
 }
-int sum_of_numbers(int fn, int sn)
+int sum_of_numbers(int fn, int sn)//int wypuszcza wartoœci
 {
     int s;
     s = fn + sn;
     return s;
 }
+long long calculated_factorial(long long  n)
+{
+    long long factorial = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        factorial = factorial * i;
+    }
+    return factorial;
+}
+long long calculated_factorialV2(long long  n)
+{
+    if (n <= 1)
+        return 1;
+    else
+        return n * calculated_factorialV2(n - 1);
+}
+int factorial_of_number()//oblicznie silni
+{
+    int number;
+    std::cout << "give a number\n";
+    std::cin >> number;
+    long long factorial = calculated_factorialV2(number);
+    std::cout << "Factorial = " << factorial << "\n";
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -74,6 +99,7 @@ int main()
     task6_get_number(number_from_user);
     std::cout << "You gave " << number_from_user;*/
     int first_number, second_number, sum;
+
     first_number = 9;
     second_number = 2;
     sum = sum_of_numbers(first_number, second_number);
