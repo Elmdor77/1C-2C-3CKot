@@ -69,7 +69,7 @@ long long calculated_factorialV2(long long  n)
     else
         return n * calculated_factorialV2(n - 1);
 }
-int factorial_of_number()//oblicznie silni
+void factorial_of_number()//oblicznie silni
 {
     int number;
     std::cout << "give a number\n";
@@ -98,12 +98,13 @@ int main()
     /*int number_from_user = 5;
     task6_get_number(number_from_user);
     std::cout << "You gave " << number_from_user;*/
-    int first_number, second_number, sum;
-
+    /*int first_number, second_number, sum;
     first_number = 9;
     second_number = 2;
     sum = sum_of_numbers(first_number, second_number);
-    std::cout << sum;
+    std::cout << sum;*/
+    factorial_of_number();
+   
 
 }
 
