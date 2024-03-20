@@ -145,20 +145,61 @@ Wyniki rzutów kostk¹ 10-œcienn¹:
 5. Rzut 5: 8
 Suma wyników: 33
 */
-void task3()
+void menu_dice_choose(int dice_type, int dice_number)
 {
+    std::cout << "1 - 6D dice\n";
+    std::cout << "2 - 10D dice\n";
+    std::cout << "3 - 20D dice\n";
+    std::cin >> dice_type;
+  
+}
+void dice_how_much(int roll_number, int dice_number, int roll_result)
+{
+    std::cout << "Give how many times to roll the dice\n";
+    std::cin >> roll_number;
+    srand(time(0));
+    for (int i = 1; i <= roll_number; i++)
+    {
+        roll_result = roll_result + rand();
+    }
+    std::cout << roll_result;
 
 }
 
-void menu_dice_choose()
+void what_dice_number(int dice_type, int dice_number)
 {
-    std::cout << "1 - 30K dice\n";
-    std::cout << "2 - 10K dice\n";
-    std::cout << "3 - 20K dice\n";
-    std::cin<<
+    switch (dice_type)
+    {
+
+    case 1:
+        dice_number = 6;
+        break;
+    case 2:
+        dice_number = 10;
+        break;
+    case 3:
+        dice_number = 20;
+        break;
+    default:
+        break;
+    }
+}
+void task3()
+{
+    int dice_number = 0;
+    int dice_type = 0;
+    int roll_number = 0;
+    int roll_result = 0;
+    menu_dice_choose(dice_type, dice_number);
+    what_dice_number(dice_type, dice_number);
+    dice_how_much(roll_number, dice_number, roll_result);
 }
 int main()
 {
     task3();
 }
+
+
+    
+
     
