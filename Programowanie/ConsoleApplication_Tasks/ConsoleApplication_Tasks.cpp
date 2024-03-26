@@ -52,7 +52,7 @@ void task1()
     }
     std::cout << "Result = " << number_result;
 }
-#pragma endregion Zad 1
+#pragma endregion Calc
 #pragma region Zad 2
 /*
 ZADANIE
@@ -122,7 +122,8 @@ void task2()
     std::cin >> number_temperature;
     temperature_check(temperature_type, number_temperature, temperature_comverted);
 }
-#pragma endregion Zad 2
+#pragma endregion Temp_convert
+#pragma region Zad 3
 /*
 ZADANIE
 Symulator rzutu kostk¹
@@ -145,13 +146,11 @@ Wyniki rzutów kostk¹ 10-œcienn¹:
 5. Rzut 5: 8
 Suma wyników: 33
 */
-void menu_dice_choose(int dice_type, int dice_number)
+void menu_dice()
 {
     std::cout << "1 - 6D dice\n";
     std::cout << "2 - 10D dice\n";
     std::cout << "3 - 20D dice\n";
-    std::cin >> dice_type;
-  
 }
 void dice_how_much(int roll_number, int dice_number, int roll_result)
 {
@@ -160,14 +159,14 @@ void dice_how_much(int roll_number, int dice_number, int roll_result)
     srand(time(0));
     for (int i = 1; i <= roll_number; i++)
     {
-        roll_result = roll_result + rand();
+        roll_result = roll_result + rand() % (dice_number - 1 + 1) + 1;
     }
-    std::cout << roll_result;
+    std::cout << "roll_result = "<<roll_result;
 
 }
-
-void what_dice_number(int dice_type, int dice_number)
+void what_dice_number(int dice_type, int& dice_number)
 {
+    std::cin >> dice_type;
     switch (dice_type)
     {
 
@@ -190,16 +189,131 @@ void task3()
     int dice_type = 0;
     int roll_number = 0;
     int roll_result = 0;
-    menu_dice_choose(dice_type, dice_number);
+    menu_dice();
     what_dice_number(dice_type, dice_number);
     dice_how_much(roll_number, dice_number, roll_result);
 }
+#pragma endregion Dice
+#pragma region Zad 4
+/*
+ZADANIE
+Konwerter jednostek
+
+Napisz program konwertuj¹cy jednostki miar. Program powinien umo¿liwiaæ konwersjê miêdzy ró¿nymi jednostkami (np. metry na centymetry, kilogramy na funty) oraz obs³ugiwaæ ró¿ne typy jednostek.
+
+Instrukcje:
+
+Zdefiniuj zestaw jednostek, które chcesz obs³ugiwaæ (np. d³ugoœæ: metry, centymetry, cale; masa: kilogramy, funty).
+Poproœ u¿ytkownika o wybór jednostki wejœciowej i jednostki wyjœciowej oraz podanie wartoœci do konwersji.
+Przekonwertuj wartoœæ z jednostki wejœciowej na jednostkê wyjœciow¹ na podstawie ustalonego wspó³czynnika konwersji.
+Wyœwietl wynik konwersji.
+Przyk³adowe dzia³anie programu:
+
+Konwerter jednostek
+-------------------
+
+Wybierz jednostkê wejœciow¹:
+1. Metry
+2. Centymetry
+3. Cale
+Wybór: 1
+
+Wybierz jednostkê wyjœciow¹:
+1. Metry
+2. Centymetry
+3. Cale
+Wybór: 2
+
+Podaj wartoœæ do konwersji: 5
+
+Wynik konwersji: 500 centymetrów
+*/
+void menu_measurements()
+{
+    std::cout << "1.Centimeters\n2.Meters\n3.Inches\n";
+}
+void mesurement_base(int mesurement, std::string& base_mesurement)
+{
+    std::cout << "Give a base mesurement\n";
+    std::cin >> mesurement;
+    switch (mesurement)
+    {
+    case 1:
+        base_mesurement = "Centemeters";
+        break;
+    case 2:
+        base_mesurement = "Meters";
+        break;
+    case 3:
+        base_mesurement = "Inches";
+        break;
+    default:
+        break;
+    }
+}
+void mesurement_output(int mesurement, std::string& output_mesurement)
+{
+    std::cout << "Give an output mesurement\n";
+    std::cin >> mesurement;
+    switch (mesurement)
+    {
+    case 1:
+        output_mesurement = "Centemeters";
+        break;
+    case 2:
+        output_mesurement = "Meters";
+        break;
+    case 3:
+        output_mesurement = "Inches";
+        break;
+    default:
+        break;
+    }
+}
+void mesurement_amount(float& amount_mesurement)
+{
+    std::cout << "How much base mesurement to convert\n";
+    std::cin >> amount_mesurement;
+
+}
+void mesurement_convert(std::string base_mesurement, std::string output_mesurement, float amount_mesurement, float mesurement_converted)
+{
+    if (base_mesurement == "Centemeters" && output_mesurement == "Centemeters")
+        std::cout << "Mesurement converted - " << amount_mesurement;
+    if (base_mesurement == "Meters" && output_mesurement == "Meters")
+        std::cout << "Mesurement converted - " << amount_mesurement;
+    if (base_mesurement == "Inches" && output_mesurement == "Inches")
+        std::cout << "Mesurement converted - " << amount_mesurement;
+    if (base_mesurement == "Centemeters" && output_mesurement == "Meters")
+        std::cout << "Mesurement converted - " << amount_mesurement / 100;
+    if (base_mesurement == "Centemeters" && output_mesurement == "Inches")
+        std::cout << "Mesurement converted - " << amount_mesurement * 0.393700787;
+    if (base_mesurement == "Meters" && output_mesurement == "Centemeters")
+        std::cout << "Mesurement converted - " << amount_mesurement * 100;
+    if (base_mesurement == "Meters" && output_mesurement == "Inches")
+        std::cout << "Mesurement converted - " << amount_mesurement * 39.3700787;
+    if (base_mesurement == "Inches" && output_mesurement == "Centemeters")
+        std::cout << "Mesurement converted" << amount_mesurement * 2.54;
+    if (base_mesurement == "Inches" && output_mesurement == "meters")
+        std::cout << "Mesurement converted - " << amount_mesurement * 0.0254;
+
+}
+void task4()
+{
+    int mesurement = 0; 
+    float amount_mesurement;
+    float mesurement_converted = 0;
+    std::string base_mesurement, output_mesurement;
+    menu_measurements();
+    mesurement_base(mesurement, base_mesurement);
+    mesurement_output(mesurement, output_mesurement);
+    mesurement_amount(amount_mesurement);
+    mesurement_convert(base_mesurement, output_mesurement, amount_mesurement, mesurement_converted);
+}
+#pragma endregion Mesurements
+    
+
 int main()
 {
-    task3();
+    task4();
 }
-
-
-    
-
-    
