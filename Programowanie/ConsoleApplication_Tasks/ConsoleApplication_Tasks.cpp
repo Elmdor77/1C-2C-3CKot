@@ -152,7 +152,7 @@ void menu_dice()
     std::cout << "2 - 10D dice\n";
     std::cout << "3 - 20D dice\n";
 }
-void dice_how_much(int roll_number, int dice_number, int roll_result)
+void dice_how_much(int roll_number, int diceNumber, int roll_result)
 {
     std::cout << "Give how many times to roll the dice\n";
     std::cin >> roll_number;
