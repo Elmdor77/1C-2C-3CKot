@@ -1,4 +1,6 @@
 #include <iostream>
+#include <windows.h>
+#include <conio.h>
 #pragma region Zad 1
 /*
 Zadanie: Tworzenie prostego kalkulatora
@@ -123,77 +125,77 @@ void task2()
     temperature_check(temperature_type, number_temperature, temperature_comverted);
 }
 #pragma endregion Temp_convert
-#pragma region Zad 3
-/*
-ZADANIE
-Symulator rzutu kostk¹
-Napisz program, który bêdzie symulowa³ rzut kostk¹. Program powinien umo¿liwiaæ u¿ytkownikowi wybór rodzaju kostki (np. 6-œcienna, 10-œcienna, 20-œcienna) oraz iloœæ rzutów. Po wykonaniu rzutów, program powinien wyœwietliæ wyniki oraz sumê otrzymanych wartoœci.
-Instrukcje:
-Poproœ u¿ytkownika o wybór rodzaju kostki (np. 6-œcienna, 10-œcienna, 20-œcienna).
-Poproœ u¿ytkownika o podanie iloœci rzutów.
-Wykonaj podan¹ liczbê rzutów wybranej kostk¹, zapisuj¹c wyniki.
-Wyœwietl otrzymane wyniki oraz sumê otrzymanych wartoœci.
-Przyk³adowe dzia³anie programu:
-Symulator rzutu kostk¹
------------------------
-Wybierz rodzaj kostki (6/10/20): 10
-Ile rzutów chcesz wykonaæ?: 5
-Wyniki rzutów kostk¹ 10-œcienn¹:
-1. Rzut 1: 7
-2. Rzut 2: 3
-3. Rzut 3: 10
-4. Rzut 4: 5
-5. Rzut 5: 8
-Suma wyników: 33
-*/
-void menu_dice()
-{
-    std::cout << "1 - 6D dice\n";
-    std::cout << "2 - 10D dice\n";
-    std::cout << "3 - 20D dice\n";
-}
-void dice_how_much(int roll_number, int diceNumber, int roll_result)
-{
-    std::cout << "Give how many times to roll the dice\n";
-    std::cin >> roll_number;
-    srand(time(0));
-    for (int i = 1; i <= roll_number; i++)
-    {
-        roll_result = roll_result + rand() % (dice_number - 1 + 1) + 1;
-    }
-    std::cout << "roll_result = "<<roll_result;
-
-}
-void what_dice_number(int dice_type, int& dice_number)
-{
-    std::cin >> dice_type;
-    switch (dice_type)
-    {
-
-    case 1:
-        dice_number = 6;
-        break;
-    case 2:
-        dice_number = 10;
-        break;
-    case 3:
-        dice_number = 20;
-        break;
-    default:
-        break;
-    }
-}
-void task3()
-{
-    int dice_number = 0;
-    int dice_type = 0;
-    int roll_number = 0;
-    int roll_result = 0;
-    menu_dice();
-    what_dice_number(dice_type, dice_number);
-    dice_how_much(roll_number, dice_number, roll_result);
-}
-#pragma endregion Dice
+//#pragma region Zad 3
+///*
+//ZADANIE
+//Symulator rzutu kostk¹
+//Napisz program, który bêdzie symulowa³ rzut kostk¹. Program powinien umo¿liwiaæ u¿ytkownikowi wybór rodzaju kostki (np. 6-œcienna, 10-œcienna, 20-œcienna) oraz iloœæ rzutów. Po wykonaniu rzutów, program powinien wyœwietliæ wyniki oraz sumê otrzymanych wartoœci.
+//Instrukcje:
+//Poproœ u¿ytkownika o wybór rodzaju kostki (np. 6-œcienna, 10-œcienna, 20-œcienna).
+//Poproœ u¿ytkownika o podanie iloœci rzutów.
+//Wykonaj podan¹ liczbê rzutów wybranej kostk¹, zapisuj¹c wyniki.
+//Wyœwietl otrzymane wyniki oraz sumê otrzymanych wartoœci.
+//Przyk³adowe dzia³anie programu:
+//Symulator rzutu kostk¹
+//-----------------------
+//Wybierz rodzaj kostki (6/10/20): 10
+//Ile rzutów chcesz wykonaæ?: 5
+//Wyniki rzutów kostk¹ 10-œcienn¹:
+//1. Rzut 1: 7
+//2. Rzut 2: 3
+//3. Rzut 3: 10
+//4. Rzut 4: 5
+//5. Rzut 5: 8
+//Suma wyników: 33
+//*/
+//void menu_dice()
+//{
+//    std::cout << "1 - 6D dice\n";
+//    std::cout << "2 - 10D dice\n";
+//    std::cout << "3 - 20D dice\n";
+//}
+//void dice_how_much(int roll_number, int diceNumber, int roll_result)
+//{
+//    std::cout << "Give how many times to roll the dice\n";
+//    std::cin >> roll_number;
+//    srand(time(0));
+//    for (int i = 1; i <= roll_number; i++)
+//    {
+//        roll_result = roll_result + rand() % (dice_number - 1 + 1) + 1;
+//    }
+//    std::cout << "roll_result = "<<roll_result;
+//
+//}
+//void what_dice_number(int dice_type, int& dice_number)
+//{
+//    std::cin >> dice_type;
+//    switch (dice_type)
+//    {
+//
+//    case 1:
+//        dice_number = 6;
+//        break;
+//    case 2:
+//        dice_number = 10;
+//        break;
+//    case 3:
+//        dice_number = 20;
+//        break;
+//    default:
+//        break;
+//    }
+//}
+//void task3()
+//{
+//    int dice_number = 0;
+//    int dice_type = 0;
+//    int roll_number = 0;
+//    int roll_result = 0;
+//    menu_dice();
+//    what_dice_number(dice_type, dice_number);
+//    dice_how_much(roll_number, dice_number, roll_result);
+//}
+//#pragma endregion Dice
 #pragma region Zad 4
 /*
 ZADANIE
@@ -311,9 +313,65 @@ void task4()
     mesurement_convert(base_mesurement, output_mesurement, amount_mesurement, mesurement_converted);
 }
 #pragma endregion Mesurements
+#pragma region Zad 5
+void getConsolResolution(int& consoleWidth, int& consoleHeight)
+{
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+
+    consoleWidth = csbi.srWindow.Right - csbi.srWindow.Left;
+    consoleHeight = csbi.srWindow.Bottom - csbi.srWindow.Top;
+}
+int setCursorRandom(int consoleWidth, int consoleHeight)
+{
     
+    COORD c;
+    c.X = rand() % (consoleWidth);
+    c.Y = rand() % (consoleHeight);
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+    int x = c.X;
+    int y = c.Y;
+    return x, y;
+}
+void setCursor(int x, int y)
+{
+    COORD c;
+    c.X = x;
+    c.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}
+
+void showConsoleCursor(bool showFlag)
+{
+    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    CONSOLE_CURSOR_INFO     cursorInfo;
+
+    GetConsoleCursorInfo(out, &cursorInfo);
+    cursorInfo.bVisible = showFlag; // set the cursor visibility
+    SetConsoleCursorInfo(out, &cursorInfo);
+}
+
+void task5()
+{
+    while (true)
+    {
+        int consoleWidth;
+        int consoleHeight;
+
+        showConsoleCursor(false);
+        getConsolResolution(consoleWidth, consoleHeight);
+        setCursorRandom(consoleWidth, consoleHeight);
+        std::cout << "*";
+        setCursorRandom(consoleWidth, consoleHeight);
+        std::cout << " ";
+        Sleep(0);
+    }
+
+
+}
 
 int main()
 {
-    task4();
+    task5();
 }
