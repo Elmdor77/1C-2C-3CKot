@@ -1,6 +1,3 @@
-// ConsoleApplication_Array.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 //Program wczyta 5 liczb i wyœwietli je w odwrotnej kolejnoœci
 void task1()
