@@ -376,4 +376,5 @@ void task5()
 int main()
 {
     task5();
+    std::cout << "i";
 }
