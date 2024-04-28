@@ -244,9 +244,63 @@ void task8()
 	}
 	std::cout << "\n";
 }
+void task9()
+{
+	int myNumbers[] = { 10, 20, 30, 40, 50 };
+	for (int i : myNumbers) //i = next number in array
+	{
+		std::cout << i << "\n";
+	}
+}
+void task10()
+{
+	int myNumbers[5] = { 10, 20, 30, 40, 50 };
+	std::cout << "Number of bits = "<< sizeof(myNumbers) << "\n"; //sizeof podaje iloœæ bitów
+	int getArrayLength = sizeof(myNumbers) / sizeof(int);
+	std::cout << "Number of elements = " << getArrayLength;
+}
+void task11()//2D array
+{
+	std::string letters1[2][4] = 
+	{
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+	};
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 4; j++) {
+			std::cout << letters1[i][j] << "\n";
+		}
+	}
+}
+void task12()//3D array
+{
+	std::string letters2[2][2][2] =
+	{
+  {
+	{ "A", "B" },
+	{ "C", "D" }
+  },
+  {
+	{ "E", "F" },
+	{ "G", "H" }
+  }
+	};
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			for (int k = 0; k < 2; k++)
+			{
+				std::cout << letters2[i][j][k] << "\n";
+			}
+		}
+	}
+}
 
 int main()
 {
-	task8();
+	task12();
 }
 		
