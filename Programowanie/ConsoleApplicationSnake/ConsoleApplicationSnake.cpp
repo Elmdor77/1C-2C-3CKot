@@ -247,7 +247,7 @@ int main()
 	point itemsToCollect[ELEMENT_TO_COLLECT_COUNT];
 
 	boardCoordinates board;
-
+	6
 	getConsolResolution(consoleWidth, consoleHeight);
 	board.leftTop.x = 10;
 	board.leftTop.y = 2;
