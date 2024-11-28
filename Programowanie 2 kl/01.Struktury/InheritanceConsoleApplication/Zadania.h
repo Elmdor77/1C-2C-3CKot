@@ -14,7 +14,7 @@ public:
 public:
 	void figurePropertiesShow()
 	{
-		std::cout << "Number of sides: " << sides;
+		std::cout << "\nNumber of sides: " << sides;
 		std::cout << "\nNumber of angles: " << angles;
 		std::cout << "\nSum value of angles: " << anglesSum;
 		std::cout << "\nMinimal number of parallel sides:" << minSidesParallel;
@@ -44,6 +44,7 @@ class Parallelogram : public Trapeze
 public:
 	void figureProperties()
 	{
+		Trapeze::figureProperties();
 		parallelSidesSameLength = true;
 		parallelAnglesSameValue = true;
 	}
@@ -53,6 +54,7 @@ class Diamond : public Parallelogram
 public:
 	void figureProperties()
 	{
+		Parallelogram::figureProperties();
 		 sidesSameLength = true;
 	}
 
@@ -62,6 +64,7 @@ class Rectangle : public Diamond
 public:
 	void figureProperties()
 	{
+		Diamond::figureProperties();
 		allAnglesRight = true;
 		sidesSameLength = false;
 	}
@@ -71,6 +74,7 @@ class Square : public Rectangle
 public:
 	void figureProperties()
 	{
+		Rectangle :: figureProperties();
 		 sidesSameLength = true;
 	}
 };
