@@ -25,20 +25,25 @@ int main()
 	for (int num : numbers)
 	{
 		int tmp_num = num;
-		int tmp_num2 = num;
 		int num_reversed = 0;
-		if (tmp_num >= 10)
-		{
-			tmp_num = tmp_num / 10;
-			num_reversed = num_reversed + tmp_num;
-			while (tmp_num > 10)
-			{
-				std::cout << tmp_num2;
-				tmp_num2 = tmp_num2 - 10 * tmp_num;
-				tmp_num = tmp_num / 10;
-				
-			}
-		}
+		int num_symbols;
+	while(tmp_num > 10)
+	{
+		tmp_num = num/10 12 2
+		num_symbols++; 1 2
+	}
+	int x=1;
+	while(num_symblols >=0)
+	{
+		tmp_num2 = num % pow(10,x); 
+	while(tmp_num >= 10)
+	{
+	tmp_num/10;
+	}
+	num_reversed = tmp_num2 * pow(10,num_symblols);
+	x++;
+	num_symblols--;
+	}
 		std::cout << num_reversed<<"\n";
 	}
 }
