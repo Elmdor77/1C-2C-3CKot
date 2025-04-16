@@ -20,7 +20,7 @@ int main()
 	}
 	std::cout << "\n";
 
-	std::cout << "\nZadanie 4.1:\n";
+	/*std::cout << "\nZadanie 4.1:\n";
 
 	int num_reversed = 0;
 	std::vector<int> num_reversed_devidedby_17;
@@ -164,46 +164,52 @@ int main()
 		}
 	}
 	std::cout << "\nLiczby piersze z odbiciami rowniez bedace liczbami pierwszymi:";
-	for (int num : prime_num )
+	for (int num : prime_num)
 	{
 		std::cout << "\n" << num;
 	}
-
+*/
 
 	std::cout << "\n\nZadanie 4.4:\n";
-	int different_numbers = 0;
+	double different_numbers = 0;
 	int times_no_dups = 0;
 	int times_one_dups = 0;
 	int times_two_dups = 0;
-	int how_much_num_dups = 0;
-	bool counted_itself = false;
 	for (int num : numbers)
 	{
+		int how_much_num_dups = -1;
 		for (int num2 : numbers)
 		{
 			if (num == num2) {
-				if (counted_itself == true)
 					how_much_num_dups++;
-				counted_itself = true;
-
 			}
 		}
-		if (how_much_num_dups == 0)
+		switch(how_much_num_dups)
+		{
+		case 0:
 			times_no_dups++;
-		if (how_much_num_dups == 1)
+			break;
+		case 1:
 			times_one_dups++;
-		if (how_much_num_dups == 2)
+			break;
+		case 2:
 			times_two_dups++;
-		counted_itself = false;
-		how_much_num_dups = 0;
+			break;
+
+		}
+		how_much_num_dups++;
+		if (how_much_num_dups > 1)
+		{
+			different_numbers += ((how_much_num_dups * 10) / (how_much_num_dups * how_much_num_dups) );
+		}
+
+		
 
 
 
 	}
-	different_numbers = different_numbers + times_no_dups;
-	different_numbers = different_numbers + times_one_dups / 2;
-
-	different_numbers = different_numbers + times_two_dups / 3;
+	different_numbers = different_numbers + times_no_dups * 10;
+	different_numbers = ceil(different_numbers / 10);
 	std::cout << "Ilosc roznych liczb: " << different_numbers << "\n";
 	std::cout << "Ilosc liczb wystepujacych tylko raz: " << times_no_dups << "\n";
 	std::cout << "Ilosc liczb wystepujacych dwa razy: " << times_one_dups / 2 << "\n";

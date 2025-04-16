@@ -15,15 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Matura Czerwiec 2022.cpp">
+    <ClCompile Include="Matura Maj 2024.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="przyklad.txt">
+    <Text Include="skrot.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="liczby.txt">
+    <Text Include="skrot_przyklad.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="skrot2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="skrot2_przyklad.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
