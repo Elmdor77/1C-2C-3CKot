@@ -49,3 +49,15 @@ int thirdNumber;
 firstParamentTestV3(out thirdNumber);
 Console.WriteLine(thirdNumber);
 Console.WriteLine();
+
+string StringToNumber1 = "67";
+int firstStringedNumber = int.Parse(StringToNumber1);
+Console.WriteLine(firstStringedNumber);
+
+string StringToNumber2 = Console.ReadLine();
+if (int.TryParse(StringToNumber2, out int secondStringedNumber))
+{
+    Console.WriteLine(secondStringedNumber);
+
+}else
+    Console.WriteLine("Nie działa");
