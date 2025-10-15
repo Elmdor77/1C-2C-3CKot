@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutObjectConsoleApp", "Ab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutErrorsConsoleApp", "AboutErrorsConsoleApp\AboutErrorsConsoleApp.csproj", "{22C33D73-459D-4D78-AE55-82CF87C13E41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PractitalTasks", "PractitalTasks\PractitalTasks.csproj", "{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -325,6 +327,18 @@ Global
 		{22C33D73-459D-4D78-AE55-82CF87C13E41}.Release|x64.Build.0 = Release|Any CPU
 		{22C33D73-459D-4D78-AE55-82CF87C13E41}.Release|x86.ActiveCfg = Release|Any CPU
 		{22C33D73-459D-4D78-AE55-82CF87C13E41}.Release|x86.Build.0 = Release|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Debug|x64.Build.0 = Debug|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x64.Build.0 = Release|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -359,6 +373,7 @@ Global
 		{77FC47E9-CFE3-4D89-8DD4-E8E5FB84CE18} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
 		{30A7947E-A268-42A0-9501-2EFDA5142E82} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
 		{22C33D73-459D-4D78-AE55-82CF87C13E41} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
+		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D35A861F-4B41-442E-9E32-DB71EC00F093}
