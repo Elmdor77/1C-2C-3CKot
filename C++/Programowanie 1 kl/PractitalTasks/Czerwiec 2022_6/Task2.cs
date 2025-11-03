@@ -28,7 +28,7 @@ namespace PractitalTasks.Czerwiec_2022_6;
         imię = poprzedniaOsoba.imię;
         licznik++;
     }
-    public void Wpisz_Imię(string argument)
+    public void Wypisz_imie(string argument)
     {
         if (imię != "")
             Console.WriteLine($"Cześć {argument}, mam na imię {this.imię}");
@@ -38,7 +38,7 @@ namespace PractitalTasks.Czerwiec_2022_6;
     }
     public void IlośćInstancji()
     {
-        Console.WriteLine($"Liczba zarejestrowanych osób to {licznik}");
+        Console.WriteLine($"Liczba zarejestrowanych osób to {licznik}");
     }
  }
 
@@ -46,15 +46,27 @@ namespace PractitalTasks.Czerwiec_2022_6;
 {
     public void Task()
     {
+        int identifikator = 0;
+        string nazwa_osoby = "";
 
-        Osoba osoba1 = new Osoba(int.Parse(Console.ReadLine()),(Console.ReadLine()));
-        osoba1.Wpisz_Imię(Console.ReadLine());
+        Console.WriteLine("Podaj id;");
+        identifikator = int.Parse(Console.ReadLine());
+        Console.WriteLine("Podaj imię;");
+        nazwa_osoby = Console.ReadLine();
+        Osoba osoba1 = new Osoba(identifikator,nazwa_osoby);
+        osoba1.Wypisz_imie(Console.ReadLine());
+
+
         Osoba osoba2 = new Osoba();
-        osoba2.Wpisz_Imię(Console.ReadLine());
+        osoba2.Wypisz_imie(Console.ReadLine());
+
         Osoba osoba3 = new Osoba(3, "Arek");
-        osoba3.Wpisz_Imię(Console.ReadLine());
+        osoba3.Wypisz_imie(Console.ReadLine());
+
         Osoba osoba4 = new Osoba(osoba3);
-        osoba4.Wpisz_Imię(Console.ReadLine());
+        osoba4.Wypisz_imie(Console.ReadLine());
+
+        osoba4.IlośćInstancji();
 
     }
 
