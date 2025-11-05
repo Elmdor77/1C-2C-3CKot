@@ -43,7 +43,8 @@ class Task3
     {
         string film;
         Film film1 = new Film();
-        film1.Tytuł = "The Hobbit";
+        Console.WriteLine("Podaj tytuł filmu; ");
+        film1.Tytuł = Console.ReadLine();
         film = film1.Tytuł;
         Console.WriteLine(film);
     }
