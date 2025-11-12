@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace PractitalTasks.Styczeń_2023_1;
 
+/* *****************************************
+klasa: Notatka
+opis: klasa przechowuje treść i tytuł notatek, dopisując do nich odpowiedni identyfikator oparty na polu statycznym inkrementującego licznika
+pola: ilość_notatek - statyczna ilość podanych notatek, na jej podstawie ustawiany jest identyfikator notatki
+      id - identyfikator notatki oparty na polu statycznym - ilość_notatek
+      tytuł_notatki - przechowuje podany przez użytkownika tytuł notatki
+      treść_notatki - przechowuje podaną przez użytkownika treść notatki
+autor: 01234567890
+*********************************************
+*/
 class Notatka
 {
     private static int ilość_notatek = 0;
     private int id = 0;
     protected string tytuł_notatki = "";
     protected string treść_notatki = "";
+
 
     public Notatka(string tytuł, string treść)
     {
@@ -59,5 +70,6 @@ internal class Task1_5
         notatka2.pokaż_notatke();
         notatka2.dane_notatki();
 
+        //notatka.dane_notatki();
     }
 }

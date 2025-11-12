@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PractitalTasks.Styczeń_2025_1;
 
-class urządzenie
+class Urządzenie
 {
     public void wyświetl_komunikat(string komunikat )
     {
@@ -14,7 +14,7 @@ class urządzenie
     }
 }
 
-class pralka : urządzenie
+class Pralka : Urządzenie
 {
     private int nr_prania = 0;
 
@@ -33,7 +33,7 @@ class pralka : urządzenie
             return nr_prania;
     }
 }
-class odkurzacz : urządzenie
+class Odkurzacz : Urządzenie
 {
     private bool stan_odkurzacza = false;
 
@@ -62,7 +62,7 @@ internal class Task4
     public void Task()
     {
         int nr_prania = 0;
-        pralka pralka = new pralka();
+        Pralka pralka = new Pralka();
 
         Console.WriteLine("Podaj numer prania 1...12");
         nr_prania = int.Parse(Console.ReadLine());
@@ -72,7 +72,7 @@ internal class Task4
         pralka.ustaw_pranie(nr_prania);
 
 
-        odkurzacz odkurzacz = new odkurzacz();
+        Odkurzacz odkurzacz = new Odkurzacz();
 
         odkurzacz.on();
         odkurzacz.on();

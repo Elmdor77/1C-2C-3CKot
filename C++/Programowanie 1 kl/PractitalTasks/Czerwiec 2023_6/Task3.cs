@@ -18,9 +18,9 @@ class Film
             return tytuł;
         }
 
-        set /*(int value)*/
-        {
-            //if (value >= 0)
+        set 
+        {   
+            //if(value >= 20)
             tytuł = value;
         }
     }
@@ -32,7 +32,7 @@ class Film
         }
     }
 
-    public void dodaj_wypożyczenie()
+    public void Inkrementuj_wypożyczenie()
     {
         this.ilość_wypożyczeń += 1;
     }

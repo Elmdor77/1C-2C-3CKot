@@ -48,25 +48,29 @@ namespace PractitalTasks.Czerwiec_2022_6;
     {
         int identifikator = 0;
         string nazwa_osoby = "";
+        Osoba osoba = new Osoba();
 
-        Console.WriteLine("Podaj id;");
-        identifikator = int.Parse(Console.ReadLine());
-        Console.WriteLine("Podaj imię;");
-        nazwa_osoby = Console.ReadLine();
-        Osoba osoba1 = new Osoba(identifikator,nazwa_osoby);
-        osoba1.Wypisz_imie(Console.ReadLine());
+        //Console.WriteLine("Podaj id;");
+        //identifikator = int.Parse(Console.ReadLine());
+        //Console.WriteLine("Podaj imię;");
+        //nazwa_osoby = Console.ReadLine();
+        //Osoba osoba1 = new Osoba(identifikator,nazwa_osoby);
+        //osoba1.Wypisz_imie(Console.ReadLine());
 
+        osoba.IlośćInstancji();
 
         Osoba osoba2 = new Osoba();
-        osoba2.Wypisz_imie(Console.ReadLine());
+        osoba2.Wypisz_imie("Jan");
 
-        Osoba osoba3 = new Osoba(3, "Arek");
-        osoba3.Wypisz_imie(Console.ReadLine());
+        Osoba osoba3 = new Osoba(3, Console.ReadLine());
+        osoba3.Wypisz_imie("Jan");
 
         Osoba osoba4 = new Osoba(osoba3);
-        osoba4.Wypisz_imie(Console.ReadLine());
+        osoba4.Wypisz_imie("Jan");
 
         osoba4.IlośćInstancji();
+
+
 
     }
 
