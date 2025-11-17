@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutErrorsConsoleApp", "Ab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PractitalTasks", "PractitalTasks\PractitalTasks.csproj", "{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphismConsoleApp", "PolymorphismConsoleApp\PolymorphismConsoleApp.csproj", "{C072F858-4010-4BD7-929C-D0E51132A7E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -339,6 +341,18 @@ Global
 		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x64.Build.0 = Release|Any CPU
 		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x86.ActiveCfg = Release|Any CPU
 		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2}.Release|x86.Build.0 = Release|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Debug|x64.Build.0 = Debug|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Release|x64.ActiveCfg = Release|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Release|x64.Build.0 = Release|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{C072F858-4010-4BD7-929C-D0E51132A7E7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -374,6 +388,7 @@ Global
 		{30A7947E-A268-42A0-9501-2EFDA5142E82} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
 		{22C33D73-459D-4D78-AE55-82CF87C13E41} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
 		{F8FD419E-9402-4DE5-99DB-6E2581DA47A2} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
+		{C072F858-4010-4BD7-929C-D0E51132A7E7} = {E6D23000-DB60-4020-8448-68BF450FD1D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D35A861F-4B41-442E-9E32-DB71EC00F093}
