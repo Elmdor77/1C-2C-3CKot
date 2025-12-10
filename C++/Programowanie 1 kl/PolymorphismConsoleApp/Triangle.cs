@@ -2,20 +2,19 @@
 
 namespace PolymorphismConsoleApp;
 
-internal class Trapeze : Figure
+internal class Triangle : Figure
 {
+    private int sideA, sideB, sideC;
     //protected string name;
-    protected double sideA, sideB, sideC, sideD;
     protected double height;
 
-    public Trapeze(double a, double b, double c, double d, double h)
+    public Triangle(int a, int b, int c, int h)
     {
         sideA = a;
         sideB = b;
         sideC = c;
-        sideD = d;
         height = h;
-        name = "Trapez";
+        name = "trójkąt";
     }
 
     public void ShowInfo()
@@ -24,19 +23,18 @@ internal class Trapeze : Figure
         Console.WriteLine($"Bok a = {sideA}");
         Console.WriteLine($"Bok b = {sideB}");
         Console.WriteLine($"Bok c = {sideC}");
-        Console.WriteLine($"Bok d = {sideD}");
         Console.WriteLine($"Obwód = {GetPerimieter()}");
         Console.WriteLine($"Pole = {GetArea()}");
     }
 
     public override double GetPerimieter()
     {
-        return sideA + sideB + sideC + sideD;
+        return sideA + sideB + sideC;
     }
 
-    public override double GetArea()
+    public /*virtual*/ override double GetArea()
     {
-        return (sideA + sideB) * height / 2;
+        return sideA * height / 2;
     }
 
     public override void SaveToFile()
@@ -44,13 +42,3 @@ internal class Trapeze : Figure
 
     }
 }
-
-
-/*
-                  b
-        ---------------------
-   c   /                      \    d
-      /                        \
-      --------------------------
-                a
-*/

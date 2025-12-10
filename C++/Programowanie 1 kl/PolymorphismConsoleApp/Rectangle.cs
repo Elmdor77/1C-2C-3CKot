@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Xml.Linq;
 
-namespace PolymorphismConsoleApp
+namespace PolymorphismConsoleApp;
+
+internal class Rectangle : Trapeze
 {
-    internal class Rectangle
+    public Rectangle(double a, double b) : base(a, a, b, b, b)
     {
+        name = "Prostokąt";
+    }
+
+    public override double GetArea()
+    {
+        return sideA * sideC;
     }
 }
