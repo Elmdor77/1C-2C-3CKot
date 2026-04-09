@@ -247,14 +247,34 @@ internal class Task1
         // Zadanie 29
         var OldestAge = people.Max(p => p.Age);
         var OldestPeople = people.Where(p => p.Age == OldestAge);
-        Print("Zadanie 28", OldestPeople);
+        Print("Zadanie 29", OldestPeople);
+
+
+        //== POZIOM 4 - DLA CHĘTNYCH ==
+
+        //Zadanie 32
+        var SortBySkills = people.OrderBy(p => p.Skills.Count);
+        Print("Zadanie 32", SortBySkills);
 
 
 
+        //Zadanie 33
+        var SalaryBelow8K = people.Where(p => p.Salary < 8000);
+        Print("Zadanie 33", "");
+        Print("Osoby z wypładą poniżej 8000: ", SalaryBelow8K);
+        var SalaryAbove8K = people.Where(p => p.Salary >= 8000);
+        Print("Osoby z wypładą minimum 8000: ", SalaryAbove8K);
 
+     
 
-
-
+        //Zadanie 35
+        Print("Zadanie 35", "");
+        var Age20To29 = people.Where(p => p.Age >= 20 && p.Age <= 29);
+        var Age30To39 = people.Where(p => p.Age >= 30 && p.Age <= 39);
+        var Age40To49 = people.Where(p => p.Age >= 40 && p.Age <= 49);
+        Print("Osoby w wieku 20-29 ", Age20To29);
+        Print("Osoby w wieku 30-39 ", Age30To39);
+        Print("Osoby w wieku 40-49 ", Age40To49);
 
 
 
