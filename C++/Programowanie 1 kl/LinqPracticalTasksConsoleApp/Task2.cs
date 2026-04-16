@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -94,21 +95,46 @@ internal class Task2
 
         //Zadananie 3
         var recentOrders = orders.Where(p => p.OrderDate <= DateTime.Today && p.OrderDate > DateTime.Today.AddDays(-30));
-        Print("Zadanie 1", recentOrders);
+        Print("Zadanie 3", recentOrders);
 
 
 
         //POZIOM 2 – ŚREDNI
 
         //Zadananie 4
-        var Client = orders.Select(p => p.Customer);
-        var Price = orders.Select(p => p.PricePerItem);
+        var halo = orders.Select(p => $"{p.Customer} ? {p.PricePerItem * p.Quantity}");
 
-        Print("Zadanie 4","");
-        foreach (var item in Client)
-            Console.WriteLine(item);
+        Print("Zadanie 4",halo);
 
 
+
+        //Zadananie 5
+        var containsO = orders.Where(p => p.Product.Contains('o'));
+        Print("Zadanie 5", containsO);
+
+
+        //Zadananie 6
+        var faggot = orders.Where(p => (p.PricePerItem * p.Quantity) > 1000 && p.Status != OrderStatus.Cancelled);
+        Print("Zadanie 6", faggot);
+
+        //Zadananie 7
+        var areToday = orders.All(p => p.OrderDate <= DateTime.Today && p.OrderDate > DateTime.Today.AddDays(-365));
+        Print("Zadanie 7", "");
+        if (areToday)
+            Console.WriteLine("Wszystkie zamówiania zastały zrealizowane w przeciągu ostatnich 365 dni kalendarza gregoriańskiego");
+        else
+            Console.WriteLine("Nie wszystkie zamówiania zastały zrealizowane w przeciągu ostatnich 365 dni kalendarza gregoriańskiego");
+
+
+        //POZIOM 3 – ZAAWANSOWANY
+
+        //Zadananie 8
+        var over1Product = orders.Where(p => orders.Where(o => o.Customer == p.Customer).DistinctBy(p => p.Product).Count() > 1);
+        Print("Zadanie 8", over1Product);
+
+        //Zadananie 9
+        var howLongLastOrder = orders.Select(p => $"{p.Customer} ? {orders.MinBy(p.OrderDate.Day)}");
+        Print("Zadanie 9", over1Product);
     }
 
 }
